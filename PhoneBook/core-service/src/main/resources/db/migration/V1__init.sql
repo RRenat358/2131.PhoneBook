@@ -2,13 +2,13 @@
 -- //============================================================
 create table clients (
     id                  bigserial primary key,
-    title               varchar(255) not null,
+    name                varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
                       );
 
 insert into clients (
-    title)
+    name)
 values
     ('Ivan'),
     ('Piter'),
@@ -17,13 +17,13 @@ values
 -- //============================================================
 create table phone (
     id                  bigserial primary key,
-    title               varchar(255) not null,
+    number              varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
 );
 
 insert into phone (
-    title)
+    number)
 values
     ('+79670670112'),
     ('+79670670113'),
@@ -32,13 +32,13 @@ values
 -- //============================================================
 create table email (
     id                  bigserial primary key,
-    title               varchar(255) not null,
+    address             varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
 );
 
 insert into email (
-    title)
+    address)
 values
     ('some01@gmial.com'),
     ('some02@gmial.com'),
@@ -47,10 +47,10 @@ values
 -- //============================================================
 create table clients_phone
 (
-    clients_id    bigint not null references clients (id),
-    phone_id    bigint not null references phone (id),
-    created_at timestamp default current_timestamp,
-    updated_at timestamp default current_timestamp,
+    clients_id      bigint not null references clients (id),
+    phone_id        bigint not null references phone (id),
+    created_at      timestamp default current_timestamp,
+    updated_at      timestamp default current_timestamp,
     primary key (clients_id, phone_id)
 );
 
@@ -64,10 +64,10 @@ values
 -- //============================================================
 create table clients_email
 (
-    clients_id    bigint not null references clients (id),
-    email_id    bigint not null references email (id),
-    created_at timestamp default current_timestamp,
-    updated_at timestamp default current_timestamp,
+    clients_id      bigint not null references clients (id),
+    email_id        bigint not null references email (id),
+    created_at      timestamp default current_timestamp,
+    updated_at      timestamp default current_timestamp,
     primary key (clients_id, email_id)
 );
 
