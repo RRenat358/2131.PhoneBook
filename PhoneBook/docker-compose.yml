@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+
+  postgres:
+    container_name: phoneBook-core-service.postgres
+#    image: postgres:9.6
+    image: postgres:12.16
+#    image: postgres:14.9
+#    image: postgres:15.4
+    domainname: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-U", "postgres" ]
+      interval: 5s
+      timeout: 1s
+      retries: 2
+
+
+  flyway:
+    image: boxfuse/flyway
+    command: -url=jdbc:postgresql://postgres:5432/postgres -schemas=public -user=postgres -password=postgres -connectRetries=60 migrate
+    #    volumes:
+    #      - ./flyway:/flyway/sql
+    depends_on:
+      - postgres
+
+
+  pgadmin:
+#    image: dpage/pgadmin4:6.12
+    image: dpage/pgadmin4:7.6
+    ports:
+      - 5050:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dev@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=dev
+    volumes:
+      - pgadmin_data:/home/rundeck/server/data
+volumes:
+  pgadmin_data:
+
+
+
