@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.repositories.ClientRepository;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service

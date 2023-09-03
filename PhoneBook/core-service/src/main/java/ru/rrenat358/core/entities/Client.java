@@ -26,8 +26,8 @@ public class Client {
     private String name;
 
 
-    @OneToMany(mappedBy = "number")
-    private List<Phone> number;
+//    @OneToMany(mappedBy = "number")
+//    private List<Phone> number;
 
 
     @CreationTimestamp

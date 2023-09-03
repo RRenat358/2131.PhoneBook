@@ -13,7 +13,7 @@ import java.util.List;
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
 //    @Query("SELECT o FROM Order o WHERE o.username = ?1")
-    List<Client> findAll();
+//    List<Client> findAll();
 
 
 }
