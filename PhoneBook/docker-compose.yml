@@ -31,7 +31,6 @@ services:
 
 
   pgadmin:
-#    image: dpage/pgadmin4:6.12
     image: dpage/pgadmin4:7.6
     ports:
       - 5050:80

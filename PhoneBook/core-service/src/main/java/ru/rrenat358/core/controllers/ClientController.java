@@ -10,6 +10,7 @@ import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.services.ClientService;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/clients")
@@ -20,7 +21,7 @@ public class ClientController {
     private final ClientService clientService;
 
     @GetMapping
-    public Collection<Client> findAllClient(){
+    public List<Client> findAllClient(){
         return clientService.findAll();
     }
 
