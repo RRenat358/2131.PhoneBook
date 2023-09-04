@@ -19,8 +19,14 @@ public class ClientController {
 
     private final ClientService clientService;
 
+/*
     @GetMapping
     public List<ClientDto> findAllClients() {
+        return clientService.findAll();
+    }
+*/
+    @GetMapping
+    public List<Client> findAllClients() {
         return clientService.findAll();
     }
 

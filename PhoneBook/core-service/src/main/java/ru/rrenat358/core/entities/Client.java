@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "clients")
 @Data
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class Client {
 
     @Id
@@ -29,6 +29,7 @@ public class Client {
     private String name;
 
 
+/*
     @OneToMany
     @JoinTable(name = "clients_email",
             joinColumns = @JoinColumn(name = "clients_id"),
@@ -40,6 +41,7 @@ public class Client {
             joinColumns = @JoinColumn(name = "clients_id"),
             inverseJoinColumns = @JoinColumn(name = "phone_id"))
     private List<Phone> phoneList;
+*/
 
 
     @CreationTimestamp
@@ -51,11 +53,12 @@ public class Client {
     private LocalDateTime updatedAt;
 
 
-    public Client(Long id, String name, List<Email> emailList, List<Phone> phoneList) {
-        this.id = id;
-        this.name = name;
-        this.emailList = emailList;
-        this.phoneList = phoneList;
+
+    public Client(Long id, String name) {
 
     }
+
+
+
+
 }

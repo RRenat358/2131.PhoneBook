@@ -11,17 +11,13 @@ public class ClientConverter {
     public Client dtoToEntity(ClientDto clientDto) {
         return new Client(
                 clientDto.getId(),
-                clientDto.getName(),
-                clientDto.getEmailList(),
-                clientDto.getPhoneList());
+                clientDto.getName());
     }
 
     public ClientDto entityToDto(Client client) {
         return new ClientDto(
                 client.getId(),
-                client.getName(),
-                client.getEmailList(),
-                client.getPhoneList());
+                client.getName());
     }
 
 

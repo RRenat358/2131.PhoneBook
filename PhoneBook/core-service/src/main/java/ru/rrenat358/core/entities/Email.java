@@ -22,6 +22,10 @@ public class Email {
     @Column(name = "id")
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+
     @Column(name = "address")
     private String address;
 
