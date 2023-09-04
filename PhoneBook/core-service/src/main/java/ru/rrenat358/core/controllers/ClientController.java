@@ -40,6 +40,11 @@ public class ClientController {
     }
 
 
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        clientService.deleteById(id);
+    }
+
 
 
 }

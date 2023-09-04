@@ -2,10 +2,12 @@ select * from clients;
 
 
 
+/*
 select clients.name, p.number
 from clients
 join clients_phone cp on clients.id = cp.clients_id
 join phone p on p.id = cp.phone_id;
+*/
 
 -- Hibernate:
 select client0_.id as id1_0_, client0_.created_at as created_2_0_, client0_.name as name3_0_, client0_.updated_at as updated_4_0_ from clients client0_;
