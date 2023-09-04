@@ -4,9 +4,11 @@ package ru.rrenat358.core.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.api.core.ClientDto;
+import ru.rrenat358.api.core.EmailDto;
 import ru.rrenat358.core.converters.ClientConverter;
 import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.services.ClientService;
+import ru.rrenat358.core.services.EmailService;
 
 import java.util.List;
 
@@ -16,6 +18,7 @@ import java.util.List;
 public class ClientController {
 
     private final ClientService clientService;
+    private final EmailService emailService;
     private final ClientConverter clientConverter;
 
 
@@ -45,6 +48,20 @@ public class ClientController {
         clientService.deleteById(id);
     }
 
+
+/*
+    @GetMapping("/{id}/email")
+    public List<Email> findAllEmailByClientId(@PathVariable Long id) {
+        List<Email> emailList = emailService.findAllEmailByClientId(id);
+        return emailList;
+    }
+*/
+
+    @GetMapping("/2/email")
+    public List<EmailDto> findAllEmailByClientId() {
+        List<EmailDto> emailList = emailService.findAllEmailByClientId(2L);
+        return emailList;
+    }
 
 
 }

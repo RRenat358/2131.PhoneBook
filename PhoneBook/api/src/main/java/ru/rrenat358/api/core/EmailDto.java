@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EmailDto {
 
-//    private Long id;
+    private Long id;
 
     private String address;
+
+    private Long client_id;
 
 
 }

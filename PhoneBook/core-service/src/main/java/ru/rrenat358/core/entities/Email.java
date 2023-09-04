@@ -22,9 +22,9 @@ public class Email {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne
+//    @OneToOne
     @JoinColumn(name = "client_id")
-    private Client client;
+    private Long client_id;
 
     @Column(name = "address")
     private String address;
