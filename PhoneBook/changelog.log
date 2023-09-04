@@ -4,7 +4,10 @@
 20230903 = o = GET: findAllClients() (http://localhost:5555/core/api/v1/clients)
 20230903 = i = release-0.0.1
 ==============================
-
+20230904 = o = api ClientDto
+20230904 = o = GET: findById() (http://localhost:5555/core/api/v1/clients/2)
+20230904 = o = POST: saveNewClient() (http://localhost:5555/core/api/v1/clients)
+20230904 = o = DELETE: deleteById() (http://localhost:5555/core/api/v1/clients/2)
 
 
 
