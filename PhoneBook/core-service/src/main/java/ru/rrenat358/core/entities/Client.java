@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import ru.rrenat358.api.core.EmailDto;
+import ru.rrenat358.api.core.PhoneDto;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,7 +17,7 @@ import java.util.List;
 @Table(name = "clients")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Client {
 
     @Id
@@ -31,14 +33,13 @@ public class Client {
     @JoinTable(name = "clients_email",
             joinColumns = @JoinColumn(name = "clients_id"),
             inverseJoinColumns = @JoinColumn(name = "email_id"))
-    private Collection<Email> email;
+    private List<Email> emailList;
 
     @OneToMany
     @JoinTable(name = "clients_phone",
             joinColumns = @JoinColumn(name = "clients_id"),
             inverseJoinColumns = @JoinColumn(name = "phone_id"))
-    private Collection<Phone> phone;
-
+    private List<Phone> phoneList;
 
 
     @CreationTimestamp
@@ -50,4 +51,11 @@ public class Client {
     private LocalDateTime updatedAt;
 
 
+    public Client(Long id, String name, List<Email> emailList, List<Phone> phoneList) {
+        this.id = id;
+        this.name = name;
+        this.emailList = emailList;
+        this.phoneList = phoneList;
+
+    }
 }
