@@ -1,12 +1,9 @@
 ==============================
 20230901 = o = create project
 20230901 = o = create MS [gateway,core,api]
-
-
-
-
-20230901 = i = release-0.0.1
-
+20230903 = o = GET: findAllClients() (http://localhost:5555/core/api/v1/clients)
+20230903 = i = release-0.0.1
+==============================
 
 
 
