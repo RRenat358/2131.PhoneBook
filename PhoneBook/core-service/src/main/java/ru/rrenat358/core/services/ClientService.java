@@ -3,6 +3,7 @@ package ru.rrenat358.core.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PutMapping;
 import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.repositories.ClientRepository;
@@ -24,6 +25,11 @@ public class ClientService {
         return clientRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Клиент не найден для ID : " + id));
     }
+
+    public Client saveNewClient(Client client) {
+        return clientRepository.save(client);
+    }
+
 
 
 

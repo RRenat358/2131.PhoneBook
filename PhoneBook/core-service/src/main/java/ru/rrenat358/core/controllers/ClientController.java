@@ -2,10 +2,7 @@ package ru.rrenat358.core.controllers;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.core.converters.ClientConverter;
 import ru.rrenat358.core.entities.Client;
@@ -31,6 +28,14 @@ public class ClientController {
     @GetMapping("/{id}")
     public ClientDto findById(@PathVariable Long id) {
         Client client = clientService.findById(id);
+        return clientConverter.entityToDto(client);
+    }
+
+
+    @PostMapping
+    public ClientDto saveNewClient(@RequestBody ClientDto clientDto) {
+        Client client = clientConverter.dtoToEntity(clientDto);
+        client = clientService.saveNewClient(client);
         return clientConverter.entityToDto(client);
     }
 

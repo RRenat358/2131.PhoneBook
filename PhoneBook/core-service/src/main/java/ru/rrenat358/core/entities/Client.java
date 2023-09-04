@@ -55,7 +55,8 @@ public class Client {
 
 
     public Client(Long id, String name) {
-
+        this.id = id;
+        this.name = name;
     }
 
 
