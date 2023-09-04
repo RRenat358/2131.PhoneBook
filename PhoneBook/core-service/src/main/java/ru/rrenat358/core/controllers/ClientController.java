@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.rrenat358.api.core.ClientDto;
+import ru.rrenat358.core.converters.ClientConverter;
 import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.services.ClientService;
 
@@ -16,19 +17,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClientController {
 
-
     private final ClientService clientService;
+    private final ClientConverter clientConverter;
 
-/*
+
     @GetMapping
     public List<ClientDto> findAllClients() {
-        return clientService.findAll();
+        List<Client> clientList = clientService.findAll();
+        return clientConverter.entityToDtoList(clientList);
     }
-*/
+/*
     @GetMapping
     public List<Client> findAllClients() {
         return clientService.findAll();
     }
+*/
 
 
 }
