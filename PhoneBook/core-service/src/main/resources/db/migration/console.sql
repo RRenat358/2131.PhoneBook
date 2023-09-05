@@ -78,20 +78,8 @@ HAVING e.address = 'some03@gmial.com';
 
 SELECT c.*
 FROM Clients c
-INNER JOIN Email e ON c.id = e.client_id
-WHERE e.address = 'some03@gmial.com';
-
-SELECT c.*
-FROM Clients c
 JOIN Email e ON c.id = e.client_id
 WHERE e.address = 'some03@gmial.com';
-
-
-SELECT c.*
-FROM Clients c
-INNER JOIN Email e ON c.id = e.client_id
-WHERE e.address = 'some03@gmial.com'
-GROUP BY c.id;
 
 
 SELECT c.name
@@ -103,8 +91,34 @@ GROUP BY c.id;
 
 
 
+SELECT *
+FROM Email e
+JOIN Phone p on e.client_id = p.client_id
+WHERE e.client_id = 2
+;
 
 
+
+SELECT *
+FROM Clients c
+JOIN Phone p on c.id = p.client_id
+JOIN Email e on c.id = e.client_id
+WHERE c.id = 2
+;
+
+SELECT c.name, e.address, p.number
+FROM Clients c
+JOIN Phone p on c.id = p.client_id
+JOIN Email e on c.id = e.client_id
+WHERE c.id = 2
+;
+
+SELECT e.address, p.number
+FROM Clients c
+JOIN Phone p on c.id = p.client_id
+JOIN Email e on c.id = e.client_id
+WHERE c.id = 2
+;
 
 
 
