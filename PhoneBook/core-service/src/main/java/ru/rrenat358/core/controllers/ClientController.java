@@ -7,6 +7,7 @@ import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.api.core.EmailDto;
 import ru.rrenat358.core.converters.ClientConverter;
 import ru.rrenat358.core.entities.Client;
+import ru.rrenat358.core.entities.Email;
 import ru.rrenat358.core.services.ClientService;
 import ru.rrenat358.core.services.EmailService;
 
@@ -56,6 +57,15 @@ public class ClientController {
         return emailList;
     }
 */
+
+/*
+    @GetMapping("/2/email")
+    public List<Email> findAllEmailByClientId() {
+        List<Email> emailList = emailService.findAllEmailByClientId(2L);
+        return emailList;
+    }
+*/
+
 
     @GetMapping("/2/email")
     public List<EmailDto> findAllEmailByClientId() {

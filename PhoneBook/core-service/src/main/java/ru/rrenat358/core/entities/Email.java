@@ -4,6 +4,7 @@ package ru.rrenat358.core.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -38,6 +39,14 @@ public class Email {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+
+    public Email(Long id, String address, Long clientId) {
+        this.id = id;
+        this.address = address;
+        this.client_id = clientId;
+    }
+
 
 
 }

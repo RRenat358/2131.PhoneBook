@@ -11,32 +11,19 @@ import java.util.stream.Collectors;
 public class ClientConverter {
 
     //============================================================
-    public Client dtoToEntity(ClientDto clientDto) {
-        return new Client(
-                clientDto.getId(),
-                clientDto.getName());
-    }
-
     public ClientDto entityToDto(Client client) {
         return new ClientDto(
                 client.getId(),
                 client.getName());
     }
 
-    //============================================================
-    public List<Client> dtoToEntityList(List<ClientDto> clientDtoList) {
-        List<Client> clientList = clientDtoList
-                .stream()
-                .map(clientDto -> {
-                    Client client = new Client();
-                    client.setId(client.getId());
-                    client.setName(client.getName());
-                    return client;
-                })
-                .collect(Collectors.toList());
-        return clientList;
+    public Client dtoToEntity(ClientDto clientDto) {
+        return new Client(
+                clientDto.getId(),
+                clientDto.getName());
     }
 
+    //============================================================
     public List<ClientDto> entityToDtoList(List<Client> clientList) {
         List<ClientDto> clientDtoList = clientList
                 .stream()
@@ -48,6 +35,19 @@ public class ClientConverter {
                 })
                 .collect(Collectors.toList());
         return clientDtoList;
+    }
+
+    public List<Client> dtoToEntityList(List<ClientDto> clientDtoList) {
+        List<Client> clientList = clientDtoList
+                .stream()
+                .map(clientDto -> {
+                    Client client = new Client();
+                    client.setId(client.getId());
+                    client.setName(client.getName());
+                    return client;
+                })
+                .collect(Collectors.toList());
+        return clientList;
     }
 
     //============================================================
