@@ -97,6 +97,19 @@ JOIN Phone p on e.client_id = p.client_id
 WHERE e.client_id = 2
 ;
 
+SELECT e.address, p.number
+FROM Email e
+JOIN Phone p on e.client_id = p.client_id
+WHERE e.client_id = 2
+;
+
+SELECT p.number
+FROM Email e
+JOIN Phone p on e.client_id = p.client_id
+WHERE e.client_id = 2
+GROUP BY p.number
+;
+
 
 
 SELECT *
