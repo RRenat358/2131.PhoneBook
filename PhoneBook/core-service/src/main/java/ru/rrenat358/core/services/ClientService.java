@@ -38,5 +38,10 @@ public class ClientService {
     }
 
 
+    public Client findClientByEmail(String email) {
+        return clientRepository.findClientByEmail(email);
+    }
+
+
 
 }
