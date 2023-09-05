@@ -23,7 +23,14 @@ public class EmailService {
     }
 */
 
+/*
     public List<EmailDto> findAllEmailByClientId(Long id) {
+        return emailRepository.findAllEmailByClientId(id);
+
+    }
+*/
+
+    public List<Email> findAllEmailByClientId(Long id) {
         return emailRepository.findAllEmailByClientId(id);
 
     }

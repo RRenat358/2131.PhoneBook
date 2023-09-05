@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.api.core.EmailDto;
 import ru.rrenat358.core.converters.ClientConverter;
+import ru.rrenat358.core.converters.EmailConverter;
 import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.entities.Email;
 import ru.rrenat358.core.services.ClientService;
@@ -21,6 +22,7 @@ public class ClientController {
     private final ClientService clientService;
     private final EmailService emailService;
     private final ClientConverter clientConverter;
+    private final EmailConverter emailConverter;
 
 
     @GetMapping
@@ -67,11 +69,21 @@ public class ClientController {
 */
 
 
+/*
     @GetMapping("/2/email")
     public List<EmailDto> findAllEmailByClientId() {
         List<EmailDto> emailList = emailService.findAllEmailByClientId(2L);
         return emailList;
     }
+*/
+
+    @GetMapping("/2/email")
+    public List<EmailDto> findAllEmailByClientId() {
+        List<Email> emailList = emailService.findAllEmailByClientId(2L);
+        return emailConverter.entityToDtoList(emailList);
+    }
+
+
 
 
 }

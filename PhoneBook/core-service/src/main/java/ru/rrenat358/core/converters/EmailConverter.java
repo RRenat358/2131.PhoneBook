@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
 public class EmailConverter {
 
     //============================================================
-    private EmailDto entityToDto(Email email) {
+    public EmailDto entityToDto(Email email) {
         return new EmailDto(
                 email.getId(),
                 email.getAddress(),
                 email.getClient_id());
     }
 
-    private Email dtoToEntity(EmailDto emailDto) {
+    public Email dtoToEntity(EmailDto emailDto) {
         return new Email(
                 emailDto.getId(),
                 emailDto.getAddress(),
@@ -27,7 +27,7 @@ public class EmailConverter {
     }
 
     //============================================================
-    private List<EmailDto> entityToDtoList(List<Email> emailList) {
+    public List<EmailDto> entityToDtoList(List<Email> emailList) {
         List<EmailDto> emailDtoList = emailList
                 .stream()
                 .map(email -> new EmailDto(
@@ -38,7 +38,7 @@ public class EmailConverter {
         return emailDtoList;
     }
 
-    private List<Email> dtoToEntitList(List<EmailDto> emailDtoList) {
+    public List<Email> dtoToEntitList(List<EmailDto> emailDtoList) {
         List<Email> emailList = emailDtoList
                 .stream()
                 .map(emailDto -> new Email(
