@@ -9,6 +9,7 @@ import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.repositories.ClientRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +39,7 @@ public class ClientService {
     }
 
 
-    public Client findClientByEmail(String email) {
+    public Optional<Client> findClientByEmail(String email) {
         return clientRepository.findClientByEmail(email);
     }
 

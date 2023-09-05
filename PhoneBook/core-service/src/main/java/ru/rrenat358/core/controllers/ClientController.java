@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.api.core.EmailDto;
+import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.converters.ClientConverter;
 import ru.rrenat358.core.converters.EmailConverter;
 import ru.rrenat358.core.entities.Client;
@@ -52,18 +53,10 @@ public class ClientController {
     }
 
 
-/*
-    @GetMapping("/{id}/email")
-    public List<EmailDto> findAllEmailByClientId(@PathVariable Long id) {
-        List<Email> emailList = emailService.findAllEmailByClientId(id);
-        return emailConverter.entityToDtoList(emailList);
-    }
-*/
-
-
     @GetMapping("/client-by-email/{email}")
     public ClientDto findClientByEmail(@PathVariable String email) {
-        Client client = clientService.findClientByEmail(email);
+        Client client = clientService.findClientByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("Клиент не найден для email : " + email));
         return clientConverter.entityToDto(client);
     }
 
