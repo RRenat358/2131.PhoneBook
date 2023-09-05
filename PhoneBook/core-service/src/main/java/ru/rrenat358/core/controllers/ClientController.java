@@ -52,38 +52,11 @@ public class ClientController {
     }
 
 
-/*
     @GetMapping("/{id}/email")
-    public List<Email> findAllEmailByClientId(@PathVariable Long id) {
+    public List<EmailDto> findAllEmailByClientId(@PathVariable Long id) {
         List<Email> emailList = emailService.findAllEmailByClientId(id);
-        return emailList;
-    }
-*/
-
-/*
-    @GetMapping("/2/email")
-    public List<Email> findAllEmailByClientId() {
-        List<Email> emailList = emailService.findAllEmailByClientId(2L);
-        return emailList;
-    }
-*/
-
-
-/*
-    @GetMapping("/2/email")
-    public List<EmailDto> findAllEmailByClientId() {
-        List<EmailDto> emailList = emailService.findAllEmailByClientId(2L);
-        return emailList;
-    }
-*/
-
-    @GetMapping("/2/email")
-    public List<EmailDto> findAllEmailByClientId() {
-        List<Email> emailList = emailService.findAllEmailByClientId(2L);
         return emailConverter.entityToDtoList(emailList);
     }
-
-
 
 
 }

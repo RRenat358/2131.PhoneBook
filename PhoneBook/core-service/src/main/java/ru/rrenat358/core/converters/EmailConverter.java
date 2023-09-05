@@ -33,11 +33,12 @@ public class EmailConverter {
                 .map(email -> new EmailDto(
                         email.getId(),
                         email.getAddress(),
-                        email.getClient_id()))
+                        email.getClient_id()
+                ))
                 .collect(Collectors.toList());
         return emailDtoList;
     }
-
+    
     public List<Email> dtoToEntitList(List<EmailDto> emailDtoList) {
         List<Email> emailList = emailDtoList
                 .stream()
