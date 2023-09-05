@@ -22,9 +22,9 @@ public class Phone {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne
+//    @OneToOne
     @JoinColumn(name = "client_id")
-    private Client client;
+    private Long client_id;
 
     @Column(name = "number")
     private String number;
@@ -40,4 +40,9 @@ public class Phone {
     private LocalDateTime updatedAt;
 
 
+    public Phone(Long id, String number, Long clientId) {
+        this.id = id;
+        this.number = number;
+        this.client_id = clientId;
+    }
 }

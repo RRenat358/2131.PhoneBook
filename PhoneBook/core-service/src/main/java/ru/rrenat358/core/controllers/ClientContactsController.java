@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.rrenat358.api.core.EmailDto;
+import ru.rrenat358.api.core.PhoneDto;
 import ru.rrenat358.core.converters.EmailConverter;
+import ru.rrenat358.core.converters.PhoneConverter;
 import ru.rrenat358.core.entities.Email;
+import ru.rrenat358.core.entities.Phone;
 import ru.rrenat358.core.services.EmailService;
+import ru.rrenat358.core.services.PhoneService;
 
 import java.util.List;
 
@@ -19,13 +23,21 @@ import java.util.List;
 public class ClientContactsController {
 
     private final EmailService emailService;
+    private final PhoneService phoneService;
     private final EmailConverter emailConverter;
+    private final PhoneConverter phoneConverter;
 
 
     @GetMapping("/{id}/email")
     public List<EmailDto> findAllEmailByClientId(@PathVariable Long id) {
         List<Email> emailList = emailService.findAllEmailByClientId(id);
         return emailConverter.entityToDtoList(emailList);
+    }
+
+    @GetMapping("/{id}/phone")
+    public List<PhoneDto> findAllPhoneByClientId(@PathVariable Long id) {
+        List<Phone> phoneList = phoneService.findAllPhoneByClientId(id);
+        return phoneConverter.entityToDtoList(phoneList);
     }
 
 

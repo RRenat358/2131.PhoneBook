@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PhoneDto {
 
-//    private Long id;
+    private Long id;
 
     private String number;
+
+    private Long client_id;
 
 
 }
