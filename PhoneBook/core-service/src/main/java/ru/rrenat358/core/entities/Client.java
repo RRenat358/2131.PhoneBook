@@ -8,8 +8,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Table(name = "clients")
@@ -27,20 +25,6 @@ public class Client {
     private String name;
 
 
-    @OneToMany
-    @JoinTable(name = "clients_email",
-            joinColumns = @JoinColumn(name = "clients_id"),
-            inverseJoinColumns = @JoinColumn(name = "email_id"))
-    private Collection<Email> email;
-
-    @OneToMany
-    @JoinTable(name = "clients_phone",
-            joinColumns = @JoinColumn(name = "clients_id"),
-            inverseJoinColumns = @JoinColumn(name = "phone_id"))
-    private Collection<Phone> phone;
-
-
-
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -48,6 +32,12 @@ public class Client {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+
+    public Client(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
 
 }
