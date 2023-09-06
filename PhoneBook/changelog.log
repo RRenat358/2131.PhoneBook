@@ -8,6 +8,12 @@
 20230904 = o = GET: findById() (http://localhost:5555/core/api/v1/clients/2)
 20230904 = o = POST: saveNewClient() (http://localhost:5555/core/api/v1/clients)
 20230904 = o = DELETE: deleteById() (http://localhost:5555/core/api/v1/clients/2)
+20230905 = o = GET: findClientByEmail() (http://localhost:5555/core/api/v1/clients/client-by-email/some03@gmial.com)
+20230905 = o = GET: findClientByPhone() (http://localhost:5555/core/api/v1/clients/client-by-phone/+79670670112)
+20230905 = o = GET: findAllEmailByClientId() (http://localhost:5555/core/api/v1/clients/2/email)
+20230906 = o = GET: findAllPhoneByClientId() (http://localhost:5555/core/api/v1/clients/2/phone)
+
+20230906 = o = GET: findClientByPhone() ()
 
 
 
