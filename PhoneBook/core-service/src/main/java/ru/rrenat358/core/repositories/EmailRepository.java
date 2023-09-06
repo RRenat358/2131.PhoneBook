@@ -35,7 +35,7 @@ public interface EmailRepository extends JpaRepository<Email, Long> {
             """
             DELETE FROM Email WHERE client_id = ?1
             """)
-    void deleteAllByClientId(Long id);
+    void deleteAllEmailByClientId(Long id);
 
 
 }

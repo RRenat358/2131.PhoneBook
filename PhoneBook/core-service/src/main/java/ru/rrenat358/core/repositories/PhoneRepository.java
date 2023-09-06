@@ -29,6 +29,13 @@ public interface PhoneRepository extends JpaRepository<Phone, Long> {
             """)
     void savePhoneByClientId(Long id, String number);
 
+    @Modifying
+    @Query(nativeQuery = true, value =
+            """
+            DELETE FROM Phone WHERE client_id = ?1
+            """)
+    void deleteAllPhoneByClientId(Long id);
+
 
 
 

@@ -25,6 +25,11 @@ public class PhoneService {
     }
 
 
+    @Transactional
+    public void deleteAllPhoneByClientId(Long id){
+        phoneRepository.deleteAllPhoneByClientId(id);
+    }
+
 
 
 }
