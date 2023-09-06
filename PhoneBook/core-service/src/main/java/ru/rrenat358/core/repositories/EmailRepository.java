@@ -30,6 +30,14 @@ public interface EmailRepository extends JpaRepository<Email, Long> {
     void saveEmailByClientId(Long id, String email);
 
 
+    @Modifying
+    @Query(nativeQuery = true, value =
+            """
+            DELETE FROM Email WHERE client_id = ?1
+            """)
+    void deleteAllByClientId(Long id);
+
+
 }
 
 

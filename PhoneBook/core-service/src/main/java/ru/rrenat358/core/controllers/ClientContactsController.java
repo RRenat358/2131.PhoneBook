@@ -58,6 +58,10 @@ public class ClientContactsController {
     }
 
 
+    @DeleteMapping("/{id}/email")
+    public void deleteAllByClientId(@PathVariable Long id) {
+        emailService.deleteAllByClientId(id);
+    }
 
 
 

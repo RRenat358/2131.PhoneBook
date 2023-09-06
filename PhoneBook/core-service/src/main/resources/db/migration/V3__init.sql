@@ -17,7 +17,7 @@ values
 -- //============================================================
 create table email (
     id                  bigserial primary key,
-    client_id           bigint not null references clients (id),
+    client_id          bigint not null references clients (id),
     address             varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
@@ -32,7 +32,7 @@ values
 -- //============================================================
 create table phone (
     id                  bigserial primary key,
-    client_id           bigint not null references clients (id),
+    client_id          bigint not null references clients (id),
     number              varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
