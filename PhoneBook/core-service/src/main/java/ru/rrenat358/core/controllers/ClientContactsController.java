@@ -17,6 +17,7 @@ import ru.rrenat358.core.services.PhoneService;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/clients")
@@ -43,8 +44,8 @@ public class ClientContactsController {
     }
 
     @GetMapping("/{id}/contacts")
-    public Collection<String> findAllContactsByClientId(@PathVariable Long id) {
-        Collection<String> contactCollection  = clientContactsService.findAllContactsByClientId(id);
+    public Map<String, List<?>> findAllContactsByClientId(@PathVariable Long id) {
+        Map<String, List<?>> contactCollection  = clientContactsService.findAllContactsByClientId(id);
         return contactCollection;
     }
 
