@@ -11,12 +11,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PhoneService {
 
-
     private final PhoneRepository phoneRepository;
+
 
     public List<Phone> findAllPhoneByClientId(Long id) {
         return phoneRepository.findAllPhoneByClientId(id);
-
     }
 
 

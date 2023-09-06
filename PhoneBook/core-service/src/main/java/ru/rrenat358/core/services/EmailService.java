@@ -11,12 +11,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmailService {
 
-
     private final EmailRepository emailRepository;
+
 
     public List<Email> findAllEmailByClientId(Long id) {
         return emailRepository.findAllEmailByClientId(id);
-
     }
 
 

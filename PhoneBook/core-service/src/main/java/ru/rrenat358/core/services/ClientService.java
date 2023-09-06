@@ -23,17 +23,14 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-
     public Client findById(Long id) {
         return clientRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Клиент не найден для ID : " + id));
     }
 
-
     public Client saveNewClient(Client client) {
         return clientRepository.save(client);
     }
-
 
     public void deleteById(Long id) {
         clientRepository.deleteById(id);
