@@ -134,7 +134,20 @@ WHERE c.id = 2
 ;
 
 
+insert into email (client_id, address)
+values
+    (3,'some01@gmial.com'),
+    (2,'some02@gmial.com'),
+    (2,'some03@gmial.com');
 
+
+UPDATE Email e
+SET address = 'con1@g.com'
+WHERE client_id = 2
+;
+
+INSERT INTO Email (client_id, address)
+VALUES (2, 'con2@g.com')
 
 
 

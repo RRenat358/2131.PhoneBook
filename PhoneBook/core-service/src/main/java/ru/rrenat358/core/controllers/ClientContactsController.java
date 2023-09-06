@@ -1,10 +1,8 @@
 package ru.rrenat358.core.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.api.core.EmailDto;
 import ru.rrenat358.api.core.PhoneDto;
 import ru.rrenat358.core.converters.EmailConverter;
@@ -48,6 +46,17 @@ public class ClientContactsController {
         Map<String, List<?>> contactCollection  = clientContactsService.findAllContactsByClientId(id);
         return contactCollection;
     }
+
+    @PostMapping("/{id}/email/{email}")
+    public void saveEmailByClientId(@PathVariable Long id, @PathVariable String email) {
+        emailService.saveEmailByClientId(id,email);
+
+    }
+
+
+
+
+
 
 
 }
