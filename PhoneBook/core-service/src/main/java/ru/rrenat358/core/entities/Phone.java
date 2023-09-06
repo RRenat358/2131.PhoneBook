@@ -22,11 +22,11 @@ public class Phone {
     @Column(name = "id")
     private Long id;
 
-//    @ManyToOne()
-//    @JoinColumn(name = "number")
+    @JoinColumn(name = "client_id")
+    private Long client_id;
+
     @Column(name = "number")
     private String number;
-
 
 
     @CreationTimestamp
@@ -38,4 +38,9 @@ public class Phone {
     private LocalDateTime updatedAt;
 
 
+    public Phone(Long id, String number, Long clientId) {
+        this.id = id;
+        this.number = number;
+        this.client_id = clientId;
+    }
 }

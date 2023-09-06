@@ -22,9 +22,11 @@ public class Email {
     @Column(name = "id")
     private Long id;
 
+    @JoinColumn(name = "client_id")
+    private Long client_id;
+
     @Column(name = "address")
     private String address;
-
 
 
     @CreationTimestamp
@@ -34,6 +36,13 @@ public class Email {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+
+    public Email(Long id, String address, Long clientId) {
+        this.id = id;
+        this.address = address;
+        this.client_id = clientId;
+    }
 
 
 }

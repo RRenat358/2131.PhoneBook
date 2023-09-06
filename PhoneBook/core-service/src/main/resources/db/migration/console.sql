@@ -1,16 +1,157 @@
-select * from clients;
+SELECT * FROM clients;
 
 
 
+/*
 select clients.name, p.number
 from clients
 join clients_phone cp on clients.id = cp.clients_id
 join phone p on p.id = cp.phone_id;
+*/
 
 -- Hibernate:
 select client0_.id as id1_0_, client0_.created_at as created_2_0_, client0_.name as name3_0_, client0_.updated_at as updated_4_0_ from clients client0_;
 -- Hibernate:
 select number0_.number as number3_2_0_, number0_.id as id1_2_0_, number0_.id as id1_2_1_, number0_.created_at as created_2_2_1_, number0_.number as number3_2_1_, number0_.updated_at as updated_4_2_1_ from phone number0_ where number0_.number
+
+SELECT e.address
+FROM email e
+WHERE e.client_id = ?1;
+
+SELECT e.address
+FROM Email e
+WHERE e.client_id = ?1;
+
+SELECT e.address
+FROM email e
+WHERE e.client_id = ?1;
+
+SELECT *
+FROM email e
+WHERE e.client_id = ?1;
+
+SELECT c.id
+FROM clients c
+JOIN Email e ON e.address = 'some03@gmial.com'
+GROUP BY e.client_id = c.id
+-- HAVING e.client_id = c.id;
+
+
+
+
+SELECT id
+FROM Clients
+WHERE 2 = (
+    SELECT client_id
+    FROM Email
+    GROUP BY client_id
+    )
+GROUP BY id
+;
+
+
+SELECT client_id
+FROM Email
+GROUP BY client_id;
+
+
+SELECT c.*
+FROM Clients c
+JOIN Email e ON c.id = e.client_id;
+
+/*
+3,Oleg,2023-09-04 14:55:38.179120,2023-09-04 14:55:38.179120
+2,Piter,2023-09-04 14:55:38.179120,2023-09-04 14:55:38.179120
+2,Piter,2023-09-04 14:55:38.179120,2023-09-04 14:55:38.179120
+*/
+
+
+SELECT c.*
+FROM Clients c
+JOIN Email e ON c.id = e.client_id
+GROUP BY e.address, c.id, name, c.created_at, c.updated_at
+HAVING e.address = 'some03@gmial.com';
+
+--     column "c.id" must appear in the GROUP BY clause or be used in an aggregate function
+--     Column address must be either aggregated, or mentioned in GROUP BY clause
+--
+
+SELECT c.*
+FROM Clients c
+JOIN Email e ON c.id = e.client_id
+WHERE e.address = 'some03@gmial.com';
+
+
+SELECT c.name
+FROM Clients c
+INNER JOIN Email e ON c.id = e.client_id
+WHERE e.address = 'some03@gmial.com'
+GROUP BY c.id;
+
+
+
+
+SELECT *
+FROM Email e
+JOIN Phone p ON e.client_id = p.client_id
+WHERE e.client_id = 2
+;
+
+SELECT e.address, p.number
+FROM Email e
+JOIN Phone p ON e.client_id = p.client_id
+WHERE e.client_id = 2
+;
+
+SELECT p.number
+FROM Email e
+JOIN Phone p ON e.client_id = p.client_id
+WHERE e.client_id = 2
+GROUP BY p.number
+;
+
+
+
+SELECT *
+FROM Clients c
+JOIN Phone p ON c.id = p.client_id
+JOIN Email e ON c.id = e.client_id
+WHERE c.id = 2
+;
+
+SELECT c.name, e.address, p.number
+FROM Clients c
+JOIN Phone p ON c.id = p.client_id
+JOIN Email e ON c.id = e.client_id
+WHERE c.id = 2
+;
+
+SELECT e.address, p.number
+FROM Clients c
+JOIN Phone p ON c.id = p.client_id
+JOIN Email e ON c.id = e.client_id
+WHERE c.id = 2
+;
+
+
+insert into email (client_id, address)
+values
+    (3,'some01@gmial.com'),
+    (2,'some02@gmial.com'),
+    (2,'some03@gmial.com');
+
+
+UPDATE Email e
+SET address = 'con1@g.com'
+WHERE client_id = 2
+;
+
+INSERT INTO Email (client_id, address)
+VALUES (2, 'con2@g.com')
+
+
+DELETE FROM Email WHERE client_id = 22
+;
 
 
 
