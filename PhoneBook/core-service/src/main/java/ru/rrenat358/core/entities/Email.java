@@ -4,7 +4,6 @@ package ru.rrenat358.core.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -23,13 +22,11 @@ public class Email {
     @Column(name = "id")
     private Long id;
 
-//    @OneToOne
     @JoinColumn(name = "client_id")
     private Long client_id;
 
     @Column(name = "address")
     private String address;
-
 
 
     @CreationTimestamp
@@ -46,7 +43,6 @@ public class Email {
         this.address = address;
         this.client_id = clientId;
     }
-
 
 
 }

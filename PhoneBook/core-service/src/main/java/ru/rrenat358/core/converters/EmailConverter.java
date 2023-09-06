@@ -38,7 +38,7 @@ public class EmailConverter {
                 .collect(Collectors.toList());
         return emailDtoList;
     }
-    
+
     public List<Email> dtoToEntitList(List<EmailDto> emailDtoList) {
         List<Email> emailList = emailDtoList
                 .stream()
@@ -51,7 +51,6 @@ public class EmailConverter {
     }
 
     //============================================================
-
 
 
 }

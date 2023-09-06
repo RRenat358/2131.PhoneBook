@@ -3,7 +3,6 @@ package ru.rrenat358.core.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.core.entities.Email;
 import ru.rrenat358.core.repositories.EmailRepository;
 
@@ -27,10 +26,9 @@ public class EmailService {
 
 
     @Transactional
-    public void deleteAllEmailByClientId(Long id){
+    public void deleteAllEmailByClientId(Long id) {
         emailRepository.deleteAllEmailByClientId(id);
     }
-
 
 
 }

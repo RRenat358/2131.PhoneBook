@@ -2,7 +2,6 @@ package ru.rrenat358.core.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.rrenat358.api.core.ClientDto;
 import ru.rrenat358.api.core.EmailDto;
 import ru.rrenat358.api.core.PhoneDto;
 import ru.rrenat358.core.converters.EmailConverter;
@@ -13,7 +12,6 @@ import ru.rrenat358.core.services.ClientContactsService;
 import ru.rrenat358.core.services.EmailService;
 import ru.rrenat358.core.services.PhoneService;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -43,18 +41,18 @@ public class ClientContactsController {
 
     @GetMapping("/{id}/contacts")
     public Map<String, List<?>> findAllContactsByClientId(@PathVariable Long id) {
-        Map<String, List<?>> contactCollection  = clientContactsService.findAllContactsByClientId(id);
+        Map<String, List<?>> contactCollection = clientContactsService.findAllContactsByClientId(id);
         return contactCollection;
     }
 
     @PostMapping("/{id}/email/{email}")
     public void saveEmailByClientId(@PathVariable Long id, @PathVariable String email) {
-        emailService.saveEmailByClientId(id,email);
+        emailService.saveEmailByClientId(id, email);
     }
 
     @PostMapping("/{id}/phone/{number}")
     public void savePhoneByClientId(@PathVariable Long id, @PathVariable String number) {
-        phoneService.savePhoneByClientId(id,number);
+        phoneService.savePhoneByClientId(id, number);
     }
 
 
@@ -67,9 +65,6 @@ public class ClientContactsController {
     public void deleteAllPhoneByClientId(@PathVariable Long id) {
         phoneService.deleteAllPhoneByClientId(id);
     }
-
-
-
 
 
 }

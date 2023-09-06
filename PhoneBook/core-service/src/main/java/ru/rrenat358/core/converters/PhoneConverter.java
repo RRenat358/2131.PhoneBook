@@ -38,7 +38,7 @@ public class PhoneConverter {
                 .collect(Collectors.toList());
         return phoneDtoList;
     }
-    
+
     public List<Phone> dtoToEntitList(List<PhoneDto> phoneDtoList) {
         List<Phone> phoneList = phoneDtoList
                 .stream()
@@ -51,7 +51,6 @@ public class PhoneConverter {
     }
 
     //============================================================
-
 
 
 }

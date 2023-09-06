@@ -10,7 +10,9 @@ import ru.rrenat358.core.repositories.ClientRepository;
 import ru.rrenat358.core.repositories.EmailRepository;
 import ru.rrenat358.core.repositories.PhoneRepository;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +23,6 @@ public class ClientContactsService {
     private final PhoneRepository phoneRepository;
     private final EmailConverter emailConverter;
     private final PhoneConverter phoneConverter;
-
 
 
     public Map<String, List<?>> findAllContactsByClientId(Long id) {
@@ -35,7 +36,6 @@ public class ClientContactsService {
 
         return contactsMap;
     }
-
 
 
 }

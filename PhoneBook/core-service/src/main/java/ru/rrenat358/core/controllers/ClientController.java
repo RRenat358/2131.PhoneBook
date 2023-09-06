@@ -4,14 +4,10 @@ package ru.rrenat358.core.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.api.core.ClientDto;
-import ru.rrenat358.api.core.EmailDto;
 import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.converters.ClientConverter;
-import ru.rrenat358.core.converters.EmailConverter;
 import ru.rrenat358.core.entities.Client;
-import ru.rrenat358.core.entities.Email;
 import ru.rrenat358.core.services.ClientService;
-import ru.rrenat358.core.services.EmailService;
 
 import java.util.List;
 
@@ -21,9 +17,7 @@ import java.util.List;
 public class ClientController {
 
     private final ClientService clientService;
-    private final EmailService emailService;
     private final ClientConverter clientConverter;
-    private final EmailConverter emailConverter;
 
 
     @GetMapping
@@ -66,11 +60,6 @@ public class ClientController {
                 .orElseThrow(() -> new ResourceNotFoundException("Клиент не найден для phone : " + phone));
         return clientConverter.entityToDto(client);
     }
-
-
-
-
-
 
 
 }

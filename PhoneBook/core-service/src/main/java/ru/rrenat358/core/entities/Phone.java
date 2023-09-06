@@ -22,13 +22,11 @@ public class Phone {
     @Column(name = "id")
     private Long id;
 
-//    @OneToOne
     @JoinColumn(name = "client_id")
     private Long client_id;
 
     @Column(name = "number")
     private String number;
-
 
 
     @CreationTimestamp
