@@ -1,6 +1,7 @@
 package ru.rrenat358.core.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.rrenat358.core.entities.Phone;
@@ -18,6 +19,16 @@ public interface PhoneRepository extends JpaRepository<Phone, Long> {
             WHERE e.client_id = ?1
             """)
     List<Phone> findAllPhoneByClientId(Long id);
+
+
+    @Modifying
+    @Query(nativeQuery = true, value =
+            """
+            INSERT INTO Phone (client_id, number)
+            VALUES (?1, ?2)
+            """)
+    void savePhoneByClientId(Long id, String number);
+
 
 
 

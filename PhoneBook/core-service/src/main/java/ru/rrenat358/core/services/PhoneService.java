@@ -2,6 +2,7 @@ package ru.rrenat358.core.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.rrenat358.core.entities.Phone;
 import ru.rrenat358.core.repositories.PhoneRepository;
 
@@ -17,6 +18,12 @@ public class PhoneService {
     public List<Phone> findAllPhoneByClientId(Long id) {
         return phoneRepository.findAllPhoneByClientId(id);
     }
+
+    @Transactional
+    public void savePhoneByClientId(Long id, String number) {
+        phoneRepository.savePhoneByClientId(id, number);
+    }
+
 
 
 

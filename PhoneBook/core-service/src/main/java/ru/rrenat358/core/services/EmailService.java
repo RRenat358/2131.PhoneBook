@@ -23,8 +23,9 @@ public class EmailService {
     @Transactional
     public void saveEmailByClientId(Long id, String email) {
         emailRepository.saveEmailByClientId(id, email);
-
     }
+
+
 
 
 }

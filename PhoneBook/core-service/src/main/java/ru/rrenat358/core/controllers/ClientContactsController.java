@@ -50,7 +50,11 @@ public class ClientContactsController {
     @PostMapping("/{id}/email/{email}")
     public void saveEmailByClientId(@PathVariable Long id, @PathVariable String email) {
         emailService.saveEmailByClientId(id,email);
+    }
 
+    @PostMapping("/{id}/phone/{number}")
+    public void savePhoneByClientId(@PathVariable Long id, @PathVariable String number) {
+        phoneService.savePhoneByClientId(id,number);
     }
 
 
