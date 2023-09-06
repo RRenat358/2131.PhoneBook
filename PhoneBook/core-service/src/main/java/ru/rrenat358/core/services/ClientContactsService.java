@@ -2,6 +2,8 @@ package ru.rrenat358.core.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.rrenat358.core.converters.EmailConverter;
+import ru.rrenat358.core.converters.PhoneConverter;
 import ru.rrenat358.core.entities.Email;
 import ru.rrenat358.core.entities.Phone;
 import ru.rrenat358.core.repositories.ClientRepository;
@@ -17,30 +19,21 @@ public class ClientContactsService {
     private final ClientRepository clientRepository;
     private final EmailRepository emailRepository;
     private final PhoneRepository phoneRepository;
+    private final EmailConverter emailConverter;
+    private final PhoneConverter phoneConverter;
+
 
 
     public Map<String, List<?>> findAllContactsByClientId(Long id) {
 
-        List<Email> emailCollection = emailRepository.findAllEmailByClientId(id);
-        List<Phone> phoneCollection = phoneRepository.findAllPhoneByClientId(id);
+        List<Email> emailList = emailRepository.findAllEmailByClientId(id);
+        List<Phone> phoneList = phoneRepository.findAllPhoneByClientId(id);
 
-/*
-        stringCollection = emailCollection
-                .stream()
-                .map( Email::getAddress
-                ).toList();
+        Map<String, List<?>> contactsMap = new HashMap<>();
+        contactsMap.put("email", emailConverter.entityToDtoList(emailList));
+        contactsMap.put("phone", phoneConverter.entityToDtoList(phoneList));
 
-        System.out.println("====================");
-        System.out.println(stringCollection);
-        System.out.println("====================");
-*/
-
-        Map<String, List<?>> emailMap = new HashMap<>();
-
-        emailMap.put("email", emailCollection);
-        emailMap.put("phone", phoneCollection);
-
-        return emailMap;
+        return contactsMap;
     }
 
 
