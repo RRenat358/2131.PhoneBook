@@ -60,6 +60,13 @@ public class ClientController {
         return clientConverter.entityToDto(client);
     }
 
+    @GetMapping("/client-by-phone/{phone}")
+    public ClientDto findClientByPhone(@PathVariable String phone) {
+        Client client = clientService.findClientByPhone(phone)
+                .orElseThrow(() -> new ResourceNotFoundException("Клиент не найден для phone : " + phone));
+        return clientConverter.entityToDto(client);
+    }
+
 
 
 

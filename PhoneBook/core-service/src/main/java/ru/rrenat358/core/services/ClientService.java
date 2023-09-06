@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PutMapping;
 import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.entities.Client;
+import ru.rrenat358.core.entities.Phone;
 import ru.rrenat358.core.repositories.ClientRepository;
 
 import java.util.List;
@@ -41,6 +42,10 @@ public class ClientService {
 
     public Optional<Client> findClientByEmail(String email) {
         return clientRepository.findClientByEmail(email);
+    }
+
+    public Optional<Client> findClientByPhone(String phone) {
+        return clientRepository.findClientByPhone(phone);
     }
 
 
