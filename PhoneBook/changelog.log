@@ -17,12 +17,8 @@
 20230906 = o = POST: savePhoneByClientId() (http://localhost:5555/core/api/v1/clients/2/phone/+79673330001)
 20230906 = o = DELETE: deleteAllEmailByClientId() (http://localhost:5555/core/api/v1/clients/22/email)
 20230906 = o = DELETE: deleteAllPhoneByClientId() (http://localhost:5555/core/api/v1/clients/22/phone)
-
-
-
-20230906 = o = POST: saveEmailByClientId() ()
-20230906 = o = POST: saveEmailByClientId() ()
-20230906 = o = GET: findClientByPhone() ()
+20230906 = i = release-0.0.2
+==============================
 
 
 
