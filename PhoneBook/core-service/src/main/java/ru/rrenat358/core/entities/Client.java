@@ -21,7 +21,6 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private Long id;
 
     @Column(name = "name")

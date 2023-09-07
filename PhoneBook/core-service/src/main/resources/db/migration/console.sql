@@ -147,12 +147,16 @@ WHERE client_id = 2
 ;
 
 INSERT INTO Email (client_id, address)
-VALUES (2, 'con2@g.com')
+VALUES (2, 'con2@g.com');
 
 
 DELETE FROM Email WHERE client_id = 22
 ;
 
+
+DELETE FROM Client WHERE id = 2;
+
+SELECT * FROM public.email
 
 
 
