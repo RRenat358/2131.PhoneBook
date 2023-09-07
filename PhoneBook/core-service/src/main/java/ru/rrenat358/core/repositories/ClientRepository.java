@@ -15,7 +15,7 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
     @Query(nativeQuery = true, value =
             """
             SELECT c.*
-            FROM Clients c
+            FROM Client c
             JOIN Email e ON c.id = e.client_id
             WHERE e.address = ?1
             """)
@@ -25,7 +25,7 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
     @Query(nativeQuery = true, value =
             """
             SELECT c.*
-            FROM Clients c
+            FROM Client c
             JOIN Phone e ON c.id = e.client_id
             WHERE e.number = ?1
             """)
