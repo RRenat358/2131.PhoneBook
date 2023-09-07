@@ -3,6 +3,7 @@ package ru.rrenat358.core.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.entities.Client;
 import ru.rrenat358.core.repositories.ClientRepository;
