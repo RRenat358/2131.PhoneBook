@@ -19,7 +19,8 @@
 20230906 = o = DELETE: deleteAllPhoneByClientId() (http://localhost:5555/core/api/v1/clients/22/phone)
 20230906 = i = release-0.0.2
 ==============================
-
+20230907 = w = rename table "client" to "client"
+20230907 = w = "...ON DELETE CASCADE" for ChildTables
 
 
 

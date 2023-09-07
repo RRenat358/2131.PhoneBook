@@ -16,8 +16,4 @@ public class EmailDto {
     private Long client_id;
 
 
-
-
-
-
 }
