@@ -22,8 +22,8 @@
 20230907 = w = rename table "client" to "client"
 20230907 = w = "...ON DELETE CASCADE" for ChildTables
 20230907 = i = Swagger for core-service (http://localhost:8189/pbook-core/swagger-ui/index.html)
-
-
+20230907 = i = release-0.1.0
+==============================
 
 
 
