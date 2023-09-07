@@ -156,7 +156,10 @@ DELETE FROM Email WHERE client_id = 22
 
 DELETE FROM Client WHERE id = 2;
 
-SELECT * FROM public.email
+SELECT * FROM public.email;
+
+
+SELECT * FROM public.phone;
 
 
 
