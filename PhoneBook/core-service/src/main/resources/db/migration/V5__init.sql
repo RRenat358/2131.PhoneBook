@@ -1,13 +1,13 @@
 
 -- //============================================================
-create table clients (
+create table client (
     id                  bigserial primary key,
     name                varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
                       );
 
-insert into clients (
+insert into client (
     name)
 values
     ('Ivan'),
@@ -17,7 +17,7 @@ values
 -- //============================================================
 create table email (
     id                  bigserial primary key,
-    client_id          bigint not null references clients (id),
+    client_id           bigint not null references client (id) ON DELETE CASCADE,
     address             varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp
@@ -32,7 +32,7 @@ values
 -- //============================================================
 create table phone (
     id                  bigserial primary key,
-    client_id          bigint not null references clients (id),
+    client_id           bigint not null references client (id) ON DELETE CASCADE,
     number              varchar(255) not null,
     created_at          timestamp default current_timestamp,
     updated_at          timestamp default current_timestamp

@@ -1,18 +1,11 @@
-SELECT * FROM clients;
+SELECT * FROM client;
+
+SELECT * FROM public.email;
 
 
+SELECT * FROM public.phone;
 
-/*
-select clients.name, p.number
-from clients
-join clients_phone cp on clients.id = cp.clients_id
-join phone p on p.id = cp.phone_id;
-*/
 
--- Hibernate:
-select client0_.id as id1_0_, client0_.created_at as created_2_0_, client0_.name as name3_0_, client0_.updated_at as updated_4_0_ from clients client0_;
--- Hibernate:
-select number0_.number as number3_2_0_, number0_.id as id1_2_0_, number0_.id as id1_2_1_, number0_.created_at as created_2_2_1_, number0_.number as number3_2_1_, number0_.updated_at as updated_4_2_1_ from phone number0_ where number0_.number
 
 SELECT e.address
 FROM email e
@@ -22,25 +15,21 @@ SELECT e.address
 FROM Email e
 WHERE e.client_id = ?1;
 
-SELECT e.address
-FROM email e
-WHERE e.client_id = ?1;
 
 SELECT *
 FROM email e
 WHERE e.client_id = ?1;
 
 SELECT c.id
-FROM clients c
+FROM client c
 JOIN Email e ON e.address = 'some03@gmial.com'
 GROUP BY e.client_id = c.id
 -- HAVING e.client_id = c.id;
 
 
 
-
 SELECT id
-FROM Clients
+FROM Client
 WHERE 2 = (
     SELECT client_id
     FROM Email
@@ -56,7 +45,7 @@ GROUP BY client_id;
 
 
 SELECT c.*
-FROM Clients c
+FROM Client c
 JOIN Email e ON c.id = e.client_id;
 
 /*
@@ -67,7 +56,7 @@ JOIN Email e ON c.id = e.client_id;
 
 
 SELECT c.*
-FROM Clients c
+FROM Client c
 JOIN Email e ON c.id = e.client_id
 GROUP BY e.address, c.id, name, c.created_at, c.updated_at
 HAVING e.address = 'some03@gmial.com';
@@ -77,13 +66,13 @@ HAVING e.address = 'some03@gmial.com';
 --
 
 SELECT c.*
-FROM Clients c
+FROM Client c
 JOIN Email e ON c.id = e.client_id
 WHERE e.address = 'some03@gmial.com';
 
 
 SELECT c.name
-FROM Clients c
+FROM Client c
 INNER JOIN Email e ON c.id = e.client_id
 WHERE e.address = 'some03@gmial.com'
 GROUP BY c.id;
@@ -113,21 +102,21 @@ GROUP BY p.number
 
 
 SELECT *
-FROM Clients c
+FROM Client c
 JOIN Phone p ON c.id = p.client_id
 JOIN Email e ON c.id = e.client_id
 WHERE c.id = 2
 ;
 
 SELECT c.name, e.address, p.number
-FROM Clients c
+FROM Client c
 JOIN Phone p ON c.id = p.client_id
 JOIN Email e ON c.id = e.client_id
 WHERE c.id = 2
 ;
 
 SELECT e.address, p.number
-FROM Clients c
+FROM Client c
 JOIN Phone p ON c.id = p.client_id
 JOIN Email e ON c.id = e.client_id
 WHERE c.id = 2
@@ -147,11 +136,14 @@ WHERE client_id = 2
 ;
 
 INSERT INTO Email (client_id, address)
-VALUES (2, 'con2@g.com')
+VALUES (2, 'con2@g.com');
 
 
 DELETE FROM Email WHERE client_id = 22
 ;
+
+
+DELETE FROM Client WHERE id = 2;
 
 
 

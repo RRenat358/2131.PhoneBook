@@ -1,5 +1,8 @@
 package ru.rrenat358.core.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.api.core.EmailDto;
@@ -18,6 +21,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("api/v1/clients")
 @RequiredArgsConstructor
+@Tag(name = "Контакты клиента", description = "Методы работы с Контактами клиента")
 public class ClientContactsController {
 
     private final EmailService emailService;
@@ -28,41 +32,50 @@ public class ClientContactsController {
 
 
     @GetMapping("/{id}/email")
-    public List<EmailDto> findAllEmailByClientId(@PathVariable Long id) {
+    @Operation(summary = "Получение всех Email, связанных с Клиентом по его ClientID")
+    public List<EmailDto> findAllEmailByClientId(@PathVariable @Parameter(description = "id клиента") Long id) {
         List<Email> emailList = emailService.findAllEmailByClientId(id);
         return emailConverter.entityToDtoList(emailList);
     }
 
     @GetMapping("/{id}/phone")
-    public List<PhoneDto> findAllPhoneByClientId(@PathVariable Long id) {
+    @Operation(summary = "Получение всех Phone, связанных с Клиентом по его ClientID")
+    public List<PhoneDto> findAllPhoneByClientId(@PathVariable @Parameter(description = "id клиента") Long id) {
         List<Phone> phoneList = phoneService.findAllPhoneByClientId(id);
         return phoneConverter.entityToDtoList(phoneList);
     }
 
     @GetMapping("/{id}/contacts")
-    public Map<String, List<?>> findAllContactsByClientId(@PathVariable Long id) {
+    @Operation(summary = "Получение всех контактов (Email, Phone, ..), связанных с Клиентом по его ClientID")
+    public Map<String, List<?>> findAllContactsByClientId(@PathVariable @Parameter(description = "id клиента") Long id) {
         Map<String, List<?>> contactCollection = clientContactsService.findAllContactsByClientId(id);
         return contactCollection;
     }
 
     @PostMapping("/{id}/email/{email}")
-    public void saveEmailByClientId(@PathVariable Long id, @PathVariable String email) {
+    @Operation(summary = "Сохранение Email, для Клиента по его ClientID")
+    public void saveEmailByClientId(@PathVariable @Parameter(description = "id клиента") Long id,
+                                    @PathVariable @Parameter(description = "Email клиента") String email) {
         emailService.saveEmailByClientId(id, email);
     }
 
     @PostMapping("/{id}/phone/{number}")
-    public void savePhoneByClientId(@PathVariable Long id, @PathVariable String number) {
+    @Operation(summary = "Сохранение Phone, для Клиента по его ClientID")
+    public void savePhoneByClientId(@PathVariable @Parameter(description = "id клиента") Long id,
+                                    @PathVariable @Parameter(description = "Phone клиента") String number) {
         phoneService.savePhoneByClientId(id, number);
     }
 
 
     @DeleteMapping("/{id}/email")
-    public void deleteAllEmailByClientId(@PathVariable Long id) {
+    @Operation(summary = "Удаление ВСЕХ Email, для Клиента по его ClientID")
+    public void deleteAllEmailByClientId(@PathVariable @Parameter(description = "id клиента") Long id) {
         emailService.deleteAllEmailByClientId(id);
     }
 
     @DeleteMapping("/{id}/phone")
-    public void deleteAllPhoneByClientId(@PathVariable Long id) {
+    @Operation(summary = "Удаление ВСЕХ Phone, для Клиента по его ClientID")
+    public void deleteAllPhoneByClientId(@PathVariable @Parameter(description = "id клиента") Long id) {
         phoneService.deleteAllPhoneByClientId(id);
     }
 
