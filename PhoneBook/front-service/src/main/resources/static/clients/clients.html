@@ -10,15 +10,15 @@
         <tr>
             <td>ID</td>
             <td>Имя</td>
-            <td>Email</td>
-            <td>Phone</td>
+<!--            <td>Email</td>-->
+<!--            <td>Phone</td>-->
         </tr>
         <tbody>
-        <tr ng-repeat="client in AllClient">
-            <td>{{order.id}}</td>
-            <td>{{order.name}}</td>
-            <td>{{order.address}}</td>
-            <td>{{order.number}}</td>
+        <tr ng-repeat="client in AllClients.content">
+            <td>{{client.id}}</td>
+            <td>{{client.name}}</td>
+<!--            <td>{{client.address}}</td>-->
+<!--            <td>{{client.number}}</td>-->
         </tr>
         </tbody>
     </table>

@@ -1,4 +1,4 @@
-angular.module('phonebook-front').controller('clientsController', function ($scope, $http) {
+angular.module('phonebook-front').controller('clientsController', function ($scope, $http, $location) {
     const contextPath = 'http://localhost:5555/core/api/v1';
 
 

@@ -3,12 +3,12 @@
     angular
         .module('phonebook-front', ['ngRoute', 'ngStorage'])
         .config(config)
-        .run(run);
+        /*.run(run)*/;
 
     function config($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'home/clients.html',
+                templateUrl: 'home/home.html',
                 controller: 'homeController'
             })
             .when('/clients', {
