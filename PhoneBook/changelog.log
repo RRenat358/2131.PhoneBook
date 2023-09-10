@@ -24,6 +24,7 @@
 20230907 = i = Swagger for core-service (http://localhost:8189/pbook-core/swagger-ui/index.html)
 20230907 = i = release-0.1.0
 ==============================
+20230910 = i = fix: retrieve old Flyway migrations (mistakenly deleted)
 
 
 
