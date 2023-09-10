@@ -19,7 +19,7 @@
         <module>api</module>
 <!--        <module>auth-service</module>-->
         <module>core-service</module>
-<!--        <module>front-service</module>-->
+        <module>front-service</module>
         <module>gateway</module>
     </modules>
 
