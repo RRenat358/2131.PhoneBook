@@ -1,6 +1,6 @@
 <div>
-    <p></p>
 
+    <br>
     <!--============================================================-->
     <hr>
     <h3>Клиенты</h3>
@@ -8,20 +8,22 @@
         <tr>
             <td>ID</td>
             <td>Имя</td>
-<!--            <td>Email</td>-->
-<!--            <td>Phone</td>-->
+            <td>Инфо</td>
         </tr>
         <tbody>
         <tr ng-repeat="client in AllClients">
             <td>{{client.id}}</td>
             <td>{{client.name}}</td>
-<!--            <td>{{client.address}}</td>-->
-<!--            <td>{{client.number}}</td>-->
+            <td>
+                <button class="btn btn-outline-success" ng-click="sendClientId(client.id)">показать</button>
+            </td>
         </tr>
         </tbody>
     </table>
 
 
+    <br>
+    <br>
     <!--============================================================-->
     <hr>
     <h3>Клиенты #</h3>
@@ -34,6 +36,7 @@
                         <td>Email</td>
                     </tr>
                     <tbody>
+<!--                    <tr ng-repeat="clientEmail(client.id) in AllEmailByClientId">-->
                     <tr ng-repeat="clientEmail in AllEmailByClientId">
                         <td>{{clientEmail.address}}</td>
                     </tr>
@@ -46,6 +49,7 @@
                         <td>Phone</td>
                     </tr>
                     <tbody>
+<!--                    <tr ng-repeat="clientPhone(client.id) in AllPhoneByClientId">-->
                     <tr ng-repeat="clientPhone in AllPhoneByClientId">
                         <td>{{clientPhone.number}}</td>
                     </tr>
