@@ -11,6 +11,45 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
 
 
 
+/*
+    $scope.loadAllEmailByClientId = function (clientId) {
+        $http.get(contextPath + '/clients/' + clientId)
+            .then(function (response) {
+                $scope.AllEmailByClientId = response.data;
+            });
+    }
+
+    $scope.loadAllPhoneByClientId = function (clientId) {
+        $http.get(contextPath + '/clients/' + clientId)
+            .then(function (response) {
+                $scope.AllPhoneByClientId = response.data;
+            });
+    }
+
+*/
+
+    $scope.loadAllEmailByClientId = function () {
+        $http.get(contextPath + '/clients/' + 2 + '/email')
+            .then(function (response) {
+                $scope.AllEmailByClientId = response.data;
+            });
+    }
+
+    $scope.loadAllPhoneByClientId = function () {
+        $http.get(contextPath + '/clients/' + 2 + '/phone')
+            .then(function (response) {
+                $scope.AllPhoneByClientId = response.data;
+            });
+    }
+
+
+
+
+
+
+
     $scope.loadClients();
+    $scope.loadAllEmailByClientId();
+    $scope.loadAllPhoneByClientId();
 
 });

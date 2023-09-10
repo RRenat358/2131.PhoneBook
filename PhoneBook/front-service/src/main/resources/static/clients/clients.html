@@ -1,7 +1,5 @@
 <div>
     <p></p>
-    <h3>clients</h3>
-
 
     <!--============================================================-->
     <hr>
@@ -14,7 +12,7 @@
 <!--            <td>Phone</td>-->
         </tr>
         <tbody>
-        <tr ng-repeat="client in AllClients.content">
+        <tr ng-repeat="client in AllClients">
             <td>{{client.id}}</td>
             <td>{{client.name}}</td>
 <!--            <td>{{client.address}}</td>-->
@@ -22,6 +20,43 @@
         </tr>
         </tbody>
     </table>
+
+
+    <!--============================================================-->
+    <hr>
+    <h3>Клиенты #</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover">
+                    <tr>
+                        <td>Email</td>
+                    </tr>
+                    <tbody>
+                    <tr ng-repeat="clientEmail in AllEmailByClientId">
+                        <td>{{clientEmail.address}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <table class="table table-hover">
+                    <tr>
+                        <td>Phone</td>
+                    </tr>
+                    <tbody>
+                    <tr ng-repeat="clientPhone in AllPhoneByClientId">
+                        <td>{{clientPhone.number}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 </div>

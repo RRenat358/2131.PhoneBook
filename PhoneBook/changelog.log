@@ -25,6 +25,10 @@
 20230907 = i = release-0.1.0
 ==============================
 20230910 = i = fix: retrieve old Flyway migrations (mistakenly deleted)
+20230910 = i = add FronendMS
+20230910 = i = add page Clients.html and displaying all Clients on the page
+20230910 = i = displaying all contacts by clientID
+
 
 
 
