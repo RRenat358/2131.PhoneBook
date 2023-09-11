@@ -8,11 +8,10 @@
     <br>
     <table class="table table-hover">
         <thead>
-<!--        <tr class="table-primary">-->
-        <tr>
-            <th class="mb-0 bg-info text-dark">ID</th>
-            <th class="mb-0 bg-info text-dark">Имя</th>
-            <th class="mb-0 bg-info text-dark"></th>
+        <tr class="table-info">
+            <th>ID</th>
+            <th>Имя</th>
+            <th> </th>
         </tr>
         </thead>
         <tbody>
@@ -30,16 +29,20 @@
     <br>
     <!--============================================================-->
     <hr>
-    <h4>Контакты клиента [ {{clientId}}, {{clientName}} ]</h4>
+    <h4>Контакты клиента</h4>
 
     <br>
+    <h5>   {{clientId}}, {{clientName}} </h5>
+
     <div class="container">
         <div class="row">
             <div class="col">
-                <table class="table table-hover border-white">
-                    <tr class="table-info">
+                <table class="table table-hover table-borderless">
+                    <thead>
+                    <tr class="table-light">
                         <th scope="col">Email</th>
                     </tr>
+                    </thead>
                     <tbody>
                     <tr ng-repeat="clientEmail in AllEmailByClientId">
                         <td>{{clientEmail.address}}</td>
@@ -48,10 +51,12 @@
                 </table>
             </div>
             <div class="col">
-                <table class="table table-hover border-white">
-                    <tr class="table-info">
+                <table class="table table-hover table-borderless">
+                    <thead>
+                    <tr class="table-light">
                         <th scope="col">Phone</th>
                     </tr>
+                    </thead>
                     <tbody>
                     <tr ng-repeat="clientPhone in AllPhoneByClientId">
                         <td>{{clientPhone.number}}</td>
