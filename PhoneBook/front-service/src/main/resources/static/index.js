@@ -7,12 +7,20 @@
     function config($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'home/home.html',
+                templateUrl: 'home/modify-contacts.html',
                 controller: 'homeController'
             })
             .when('/clients', {
                 templateUrl: 'clients/clients.html',
                 controller: 'clientsController'
+            })
+            .when('/new-client', {
+                templateUrl: 'new-client/new-client.html',
+                controller: 'newClientController'
+            })
+            .when('/modify-contacts', {
+                templateUrl: 'modify-contacts/modify-contacts.html',
+                controller: 'modifyContactsController'
             })
             .otherwise({
                 redirectTo: '/'
