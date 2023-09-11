@@ -4,39 +4,43 @@
     <!--============================================================-->
     <hr>
     <h3>Клиенты</h3>
+
+    <br>
     <table class="table table-hover">
+        <thead>
+<!--        <tr class="table-primary">-->
         <tr>
-            <td>ID</td>
-            <td>Имя</td>
-            <td>Инфо</td>
+            <th class="mb-0 bg-info text-dark">ID</th>
+            <th class="mb-0 bg-info text-dark">Имя</th>
+            <th class="mb-0 bg-info text-dark"></th>
         </tr>
+        </thead>
         <tbody>
         <tr ng-repeat="client in AllClients">
             <td>{{client.id}}</td>
             <td>{{client.name}}</td>
             <td>
-                <button class="btn btn-outline-success" ng-click="sendClientId(client.id)">показать</button>
+                <button class="btn btn-outline-success" ng-click="sendClientId(client.id, client.name)">показать</button>
             </td>
         </tr>
         </tbody>
     </table>
 
-
     <br>
     <br>
     <!--============================================================-->
     <hr>
-    <h3>Клиенты #</h3>
+    <h4>Контакты клиента [ {{clientId}}, {{clientName}} ]</h4>
 
+    <br>
     <div class="container">
         <div class="row">
             <div class="col">
-                <table class="table table-hover">
-                    <tr>
-                        <td>Email</td>
+                <table class="table table-hover border-white">
+                    <tr class="table-info">
+                        <th scope="col">Email</th>
                     </tr>
                     <tbody>
-<!--                    <tr ng-repeat="clientEmail(client.id) in AllEmailByClientId">-->
                     <tr ng-repeat="clientEmail in AllEmailByClientId">
                         <td>{{clientEmail.address}}</td>
                     </tr>
@@ -44,12 +48,11 @@
                 </table>
             </div>
             <div class="col">
-                <table class="table table-hover">
-                    <tr>
-                        <td>Phone</td>
+                <table class="table table-hover border-white">
+                    <tr class="table-info">
+                        <th scope="col">Phone</th>
                     </tr>
                     <tbody>
-<!--                    <tr ng-repeat="clientPhone(client.id) in AllPhoneByClientId">-->
                     <tr ng-repeat="clientPhone in AllPhoneByClientId">
                         <td>{{clientPhone.number}}</td>
                     </tr>

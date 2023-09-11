@@ -11,8 +11,10 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
 
 
     $scope.clientId = 0;
-    $scope.sendClientId = function (sendClientId) {
+    $scope.clientName = 0;
+    $scope.sendClientId = function (sendClientId, sendClientName) {
         $scope.clientId = sendClientId;
+        $scope.clientName = sendClientName;
         $scope.loadAllEmailByClientId();
         $scope.loadAllPhoneByClientId();
     }
