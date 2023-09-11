@@ -4,6 +4,14 @@ angular.module('phonebook-front').controller('newClientController', function ($s
 
 
 
+    //============================================================
+    $scope.saveNewClient = function () {
+        // console.log($scope.newProduct);
+        $http.post(contextPath + '/clients', $scope.newClient)
+            .then(function (response) {
+                $scope.loadClient = response.data;
+            });
+    }
 
 
 
