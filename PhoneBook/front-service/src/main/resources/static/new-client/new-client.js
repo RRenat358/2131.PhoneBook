@@ -2,9 +2,6 @@ angular.module('phonebook-front').controller('newClientController', function ($s
     const contextPath = 'http://localhost:5555/core/api/v1';
 
 
-
-
-    //============================================================
     $scope.saveNewClient = function () {
         // console.log($scope.newProduct);
         $http.post(contextPath + '/clients', $scope.newClient)
@@ -12,8 +9,6 @@ angular.module('phonebook-front').controller('newClientController', function ($s
                 $scope.loadClient = response.data;
             });
     }
-
-
 
 
 });

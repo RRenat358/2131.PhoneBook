@@ -75,6 +75,28 @@
         </div>
     </div>
 
+    <!--============================================================-->
+    <hr>
+    <br>
+    <span>Добавить новые контакты для выбранного клиента</span>
+
+    <br>
+    <br>
+    <div ng-show="isClientName()">
+        <form novalidate ng-submit="saveEmailByClientId()">
+            <!--        <input class="form-control" type="text" id="addName" placeholder="Имя клиента" ng-model="newClient.name">-->
+            <!--        <br>-->
+            <input class="form-control" type="text" id="newEmail" placeholder="email" ng-model="address">
+            <br>
+            <!--        <input class="form-control" type="number" id="addPhone" placeholder="телефон" ng-model="newClient.number">-->
+            <!--        <br>-->
+            <button type="submit" class="btn btn-outline-success">Сохранить</button>
+        </form>
+    </div>
+    <br>
+    <br>
+
+
 
 
 </div>

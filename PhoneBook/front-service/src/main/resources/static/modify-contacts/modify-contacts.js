@@ -5,18 +5,15 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
     $scope.clientId = "";
     $scope.clientName = "";
     $scope.sendClientId = "";
+
     $scope.loadClient = function () {
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
                 .then(function (response) {
                     $scope.clientId = response.data.id;
                     $scope.clientName = response.data.name;
-
-                    // $scope.loadClientById = response.data;
-
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
-
                 });
         }
     }
@@ -35,6 +32,28 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
                 $scope.AllPhoneByClientId = response.data;
             });
     }
+
+    //============================================================
+
+    $scope.isClientName = function () {
+        if ($scope.clientName !== "") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+
+    $scope.saveEmailByClientId = function () {
+        // console.log($scope.newProduct);
+        $http.post(contextPath + '/clients/' + $scope.clientId + '/email/' + $scope.address)
+            .then(function (response) {
+                // $scope.loadClient = response.data;
+                $scope.loadClient();
+                $scope.address = "";
+            });
+    }
+
 
 
 });

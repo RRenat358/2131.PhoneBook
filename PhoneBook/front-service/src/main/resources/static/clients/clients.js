@@ -1,6 +1,10 @@
 angular.module('phonebook-front').controller('clientsController', function ($scope, $http, $location) {
     const contextPath = 'http://localhost:5555/core/api/v1';
 
+    $scope.clientId = "";
+    $scope.clientName = "";
+
+
 
     $scope.loadClients = function () {
         $http.get(contextPath + '/clients')
@@ -9,9 +13,6 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
             });
     }
 
-
-    $scope.clientId = "";
-    $scope.clientName = "";
     $scope.sendClientDetailsAndLoadAllContacts = function (sendClientId, sendClientName) {
         $scope.clientId = sendClientId;
         $scope.clientName = sendClientName;
@@ -20,7 +21,6 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
             $scope.loadAllPhoneByClientId();
         }
     }
-
 
     $scope.loadAllEmailByClientId = function () {
         $http.get(contextPath + '/clients/' + $scope.clientId + '/email')
