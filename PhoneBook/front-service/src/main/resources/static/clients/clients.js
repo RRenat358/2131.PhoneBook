@@ -10,14 +10,17 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
     }
 
 
-    $scope.clientId = 0;
-    $scope.clientName = 0;
+    $scope.clientId = "";
+    $scope.clientName = "";
     $scope.sendClientId = function (sendClientId, sendClientName) {
         $scope.clientId = sendClientId;
         $scope.clientName = sendClientName;
-        $scope.loadAllEmailByClientId();
-        $scope.loadAllPhoneByClientId();
+        if ($scope.clientId > 0) {
+            $scope.loadAllEmailByClientId();
+            $scope.loadAllPhoneByClientId();
+        }
     }
+
 
     $scope.loadAllEmailByClientId = function () {
         $http.get(contextPath + '/clients/' + $scope.clientId + '/email')
@@ -37,7 +40,5 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
 
 
     $scope.loadClients();
-    $scope.loadAllEmailByClientId();
-    $scope.loadAllPhoneByClientId();
 
 });

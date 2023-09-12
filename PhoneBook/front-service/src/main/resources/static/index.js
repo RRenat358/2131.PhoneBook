@@ -7,7 +7,7 @@
     function config($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'home/modify-contacts.html',
+                templateUrl: 'home/home.html',
                 controller: 'homeController'
             })
             .when('/clients', {
