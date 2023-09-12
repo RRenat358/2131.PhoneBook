@@ -12,7 +12,7 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
 
     $scope.clientId = "";
     $scope.clientName = "";
-    $scope.sendClientId = function (sendClientId, sendClientName) {
+    $scope.sendClientDetailsAndLoadAllContacts = function (sendClientId, sendClientName) {
         $scope.clientId = sendClientId;
         $scope.clientName = sendClientName;
         if ($scope.clientId > 0) {
