@@ -1,4 +1,4 @@
-
+[
 ## PhoneBook  
 
 
@@ -117,9 +117,22 @@ http://localhost:8189/pbook-core/swagger-ui/index.html
 -============================================================  
 ### Front-service MS (screenshot)  
 
+Фронт реализован в очень минималистичном стили.  
+-- `AngularJS`  
+-- `Bootstrap`  
+
+
 \
-[screenshot. Frontend. 2023.09.11.png](screenshot.%20Frontend.%202023.09.11.png)
-![screenshot. Frontend. 2023.09.11.png](screenshot.%20Frontend.%202023.09.11.png)
+
+[2023.09.13. 152628.png](screenshot%2F2023.09.13.%20152628.png)
+![2023.09.13. 152628.png](screenshot%2F2023.09.13.%20152628.png)
+
+[2023.09.13. 152713.png](screenshot%2F2023.09.13.%20152713.png)
+![2023.09.13. 152713.png](screenshot%2F2023.09.13.%20152713.png)
+
+[2023.09.13. 152735.png](screenshot%2F2023.09.13.%20152735.png)
+![2023.09.13. 152735.png](screenshot%2F2023.09.13.%20152735.png)
+
 
 
 
@@ -138,5 +151,3 @@ http://localhost:8189/pbook-core/swagger-ui/index.html
 \
 \
 \
-
-

@@ -32,6 +32,10 @@
 ==============================
 20230910 = i = Front - changed the design
 20230910 = i = Front - add page and function saveNewClient()
+20230911 = i = Front - add page modify-contacts.html
+20230911 = i = Front - add saveEmailByClientId()
+20230912 = i = Front - add savePhoneByClientId()
+20230912 = i = Front - edite styles
 
 
 

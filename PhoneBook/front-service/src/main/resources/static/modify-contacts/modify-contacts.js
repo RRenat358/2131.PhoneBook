@@ -48,7 +48,6 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
         // console.log($scope.newProduct);
         $http.post(contextPath + '/clients/' + $scope.clientId + '/email/' + $scope.address)
             .then(function (response) {
-                // $scope.loadClient = response.data;
                 $scope.loadAllEmailByClientId();
                 $scope.address = "";
             });
@@ -58,7 +57,6 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
         // console.log($scope.newProduct);
         $http.post(contextPath + '/clients/' + $scope.clientId + '/phone/' + $scope.number)
             .then(function (response) {
-                // $scope.loadClient = response.data;
                 $scope.loadAllPhoneByClientId();
                 $scope.number = "";
             });
