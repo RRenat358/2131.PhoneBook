@@ -12,12 +12,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.min.js"></script>
     <!--    ==============================-->
+    <style>
+        body, html {}
+        .bg { background-image: url("images/bg.jpg"); background-repeat: repeat; }
+    </style>
 </head>
 
-<body>
+<body class="bg">
 
-<div class="container" ng-controller="indexController" ng-style="{backgroundImage:'url(./images/bg.jpg)'}">
-<!--ng-style="{'background-image':'url({{backgroundImage.url}})'}" -->
+<div class="container" ng-controller="indexController">
 
     <!--============================================================-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,6 +63,5 @@
     <!--============================================================-->
     <!-- //end container-->
 </div>
-
 </body>
 </html>

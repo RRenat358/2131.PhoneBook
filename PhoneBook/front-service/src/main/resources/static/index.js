@@ -39,7 +39,4 @@ angular.module('phonebook-front').controller('indexController', function ($rootS
     // const contextPath = 'http://localhost:8189/app/api/v1/';
 
 
-    $scope.backgroundImage = "bg.jpg"
-
-
 });
