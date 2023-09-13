@@ -12,9 +12,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.min.js"></script>
     <!--    ==============================-->
+    <style>
+        body, html {}
+        .bg { background-image: url("images/bg.jpg"); background-repeat: repeat; }
+    </style>
 </head>
 
-<body>
+<body class="bg">
 
 <div class="container" ng-controller="indexController">
 
@@ -24,12 +28,19 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="navbar-brand" href="#!/"><strong><big> ⌂ </big></strong></a>
+                    <a class="navbar-brand" href="#!/"><strong><big>  ⌂  </big></strong></a>
                 </li>
                 <li class="nav-item">
-                    <span class="navbar-toggler-icon"></span>
+                    <!--                    <span class="navbar-toggler-icon"></span>-->
                     <a class="navbar-brand" href="#!/clients">Клиенты</a>
-
+                </li>
+                <li class="nav-item">
+                    <!--                    <span class="navbar-toggler-icon"></span>-->
+                    <a class="navbar-brand" href="#!/new-client">Создать</a>
+                </li>
+                <li class="nav-item">
+                    <!--                    <span class="navbar-toggler-icon"></span>-->
+                    <a class="navbar-brand" href="#!/modify-contacts">Изменить</a>
                 </li>
 
             </ul>
@@ -45,11 +56,12 @@
     <script src="index.js"></script>
     <script src="home/home.js"></script>
     <script src="clients/clients.js"></script>
+    <script src="new-client/new-client.js"></script>
+    <script src="modify-contacts/modify-contacts.js"></script>
 
 
     <!--============================================================-->
     <!-- //end container-->
 </div>
-
 </body>
 </html>

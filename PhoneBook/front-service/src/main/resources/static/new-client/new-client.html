@@ -1,0 +1,38 @@
+<div>
+    <br>
+    <h2>Новый клиент</h2>
+
+    <!--============================================================-->
+    <hr>
+    <br>
+    <form novalidate ng-submit="saveNewClient()">
+        <input class="form-control" type="text" id="addName" placeholder="Имя клиента" ng-model="newClient.name">
+        <br>
+<!--        <input class="form-control" type="text" id="addEmail" placeholder="email" ng-model="newClient.address">-->
+<!--        <br>-->
+<!--        <input class="form-control" type="number" id="addPhone" placeholder="телефон" ng-model="newClient.number">-->
+<!--        <br>-->
+        <button type="submit" class="btn btn-outline-success">создать</button>
+    </form>
+    <br>
+    <br>
+
+    <!--============================================================-->
+    <table class="table table-hover table-borderless">
+        <thead>
+        <tr class="table-info">
+            <th>ID</th>
+            <th>Имя</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{loadClient.id}}</td>
+            <td>{{loadClient.name}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
