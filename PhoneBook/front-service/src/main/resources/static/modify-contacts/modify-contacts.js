@@ -49,8 +49,18 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
         $http.post(contextPath + '/clients/' + $scope.clientId + '/email/' + $scope.address)
             .then(function (response) {
                 // $scope.loadClient = response.data;
-                $scope.loadClient();
+                $scope.loadAllEmailByClientId();
                 $scope.address = "";
+            });
+    }
+
+    $scope.savePhoneByClientId = function () {
+        // console.log($scope.newProduct);
+        $http.post(contextPath + '/clients/' + $scope.clientId + '/phone/' + $scope.number)
+            .then(function (response) {
+                // $scope.loadClient = response.data;
+                $scope.loadAllPhoneByClientId();
+                $scope.number = "";
             });
     }
 
