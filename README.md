@@ -107,10 +107,8 @@ CoreMS
 http://localhost:8189/pbook-core/swagger-ui/index.html  
 
 \
-[screenshot. Swagger UI. 2023.09.07.png](screenshot.%20Swagger%20UI.%202023.09.07.png)
-![screenshot. Swagger UI. 2023.09.07.png](screenshot.%20Swagger%20UI.%202023.09.07.png)
-
-
+[screenshot. Swagger UI. 2023.09.07.png](screenshot%2Fscreenshot.%20Swagger%20UI.%202023.09.07.png)
+![screenshot. Swagger UI. 2023.09.07.png](screenshot%2Fscreenshot.%20Swagger%20UI.%202023.09.07.png)
 
 \
 \
