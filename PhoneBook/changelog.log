@@ -41,6 +41,7 @@
 20230915 = i = Front - add deleteClientById()
 20230915 = i = Front - add deleteEmailByIdByClientId()
 20230915 = i = Front - add deletePhoneByIdByClientId()
+20230915 = i = Front - bugfix create newClient for clientName=""
 
 
 
