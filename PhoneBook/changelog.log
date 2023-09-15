@@ -38,7 +38,9 @@
 20230913 = i = Front - edite styles
 20230913 = i = release-0.1.2
 ==============================
-
+20230915 = i = Front - add deleteClientById()
+20230915 = i = Front - add deleteEmailByIdByClientId()
+20230915 = i = Front - add deletePhoneByIdByClientId()
 
 
 
