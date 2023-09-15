@@ -46,10 +46,7 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
         $http.delete(contextPath + '/clients/' + clientIdForDel)
             .then(function (response) {
                 if ($scope.clientId === clientIdForDel) {
-                    $scope.clientId = "";
-                    $scope.clientName = "";
-                    $scope.AllEmailByClientId = "";
-                    $scope.AllPhoneByClientId = "";
+                    $scope.clearDataClient();
                 }
                 $scope.loadClients();
             });
