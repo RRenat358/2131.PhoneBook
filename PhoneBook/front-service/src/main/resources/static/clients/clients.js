@@ -52,13 +52,17 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
             });
     }
 
-    $scope.deleteClientById = function (clientIdForDel) {
-        $http.delete(contextPath + '/clients/' + clientIdForDel)
+    $scope.deleteEmailByIdByClientId = function (emailIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/email/' + emailIdForDel)
             .then(function (response) {
-                if ($scope.clientId === clientIdForDel) {
-                    $scope.clearDataClient();
-                }
-                $scope.loadClients();
+                $scope.loadAllEmailByClientId();
+            });
+    }
+
+    $scope.deletePhoneByIdByClientId = function (phoneIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/phone/' + phoneIdForDel)
+            .then(function (response) {
+                $scope.loadAllPhoneByClientId();
             });
     }
 

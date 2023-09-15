@@ -44,11 +44,15 @@
                     <thead>
                     <tr class="table-light">
                         <th scope="col">Email</th>
+                        <th> </th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-repeat="clientEmail in AllEmailByClientId">
                         <td>{{clientEmail.address}}</td>
+                        <td>
+                            <button class="btn btn-outline-danger" ng-click="deleteEmailByIdByClientId(clientEmail.id)">X</button>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -58,11 +62,15 @@
                     <thead>
                     <tr class="table-light">
                         <th scope="col">Phone</th>
+                        <th> </th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-repeat="clientPhone in AllPhoneByClientId">
                         <td>{{clientPhone.number}}</td>
+                        <td>
+                            <button class="btn btn-outline-danger" ng-click="deletePhoneByIdByClientId(clientPhone.id)">X</button>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
