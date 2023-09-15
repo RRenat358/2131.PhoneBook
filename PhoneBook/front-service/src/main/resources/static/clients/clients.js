@@ -3,6 +3,8 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
 
     $scope.clientId = "";
     $scope.clientName = "";
+    $scope.AllEmailByClientId = "";
+    $scope.AllPhoneByClientId = "";
 
 
 
@@ -36,9 +38,16 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
             });
     }
 
-    $scope.deleteClientById = function (clientId) {
-        $http.get(contextPath + '/clients/' + clientId)
+    $scope.deleteClientById = function (clientIdForDel) {
+        $http.delete(contextPath + '/clients/' + clientIdForDel)
             .then(function (response) {
+                $scope.loadClients();
+                // $scope.clientId.clear.data;
+                // $scope.clientName.clear.data;
+                // $scope.AllEmailByClientId.clear.data;
+                // $scope.AllPhoneByClientId.clear.data;
+
+
             });
     }
 
