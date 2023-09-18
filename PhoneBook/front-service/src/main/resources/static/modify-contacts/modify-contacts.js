@@ -14,6 +14,7 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
                     $scope.clientName = response.data.name;
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
+                    $scope.sendClientId = "";
                 });
         }
     }
