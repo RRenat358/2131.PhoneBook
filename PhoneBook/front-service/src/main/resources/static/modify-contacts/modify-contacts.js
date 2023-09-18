@@ -10,12 +10,47 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
                 .then(function (response) {
+            if (response.statusCode > 299) {
+                console.log("==============");
+                console.log(">299");
+                console.log("==============");
+            }
+            if (response.statusCode < 300) {
+                $scope.clientId = response.data.id;
+                $scope.clientName = response.data.name;
+                console.log("==============");
+                console.log("[" + $scope.clientId + "]");
+                console.log("[" + $scope.clientName + "]");
+                // console.log($scope.response.data);
+                // console.log($scope.response.data.name);
+                // console.log($scope.response.data.id);
+                console.log("==============");
+
+                $scope.loadAllEmailByClientId();
+                $scope.loadAllPhoneByClientId();
+                $scope.sendClientId = "";
+            }
+
+
+/*
+        .then(function (response) {
                     $scope.clientId = response.data.id;
                     $scope.clientName = response.data.name;
+                    console.log("==============");
+                    console.log("[" + $scope.clientId + "]");
+                    console.log("[" + $scope.clientName + "]");
+                    // console.log($scope.response.data);
+                    // console.log($scope.response.data.name);
+                    // console.log($scope.response.data.id);
+                    console.log("==============");
+
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
                     $scope.sendClientId = "";
                 });
+*/
+                });
+
         }
     }
 
