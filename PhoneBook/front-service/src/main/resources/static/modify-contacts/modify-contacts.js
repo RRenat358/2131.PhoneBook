@@ -7,87 +7,23 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
     $scope.sendClientId = "";
 
 
-
-/*
     $scope.loadClient = function () {
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
                 .then(function (response) {
                     $scope.clientId = response.data.id;
                     $scope.clientName = response.data.name;
-
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
                     $scope.sendClientId = "";
-                });
-        }
-    }
-*/
-
-/*
-    $scope.loadClient = function () {
-        if ($scope.sendClientId > 0) {
-            $http.get(contextPath + '/clients/' + $scope.sendClientId)
-                .then(function (response) {
-
-                    if (response.status !== 200) {
-                        console.log("======= status !== 200 =======");
-                        return;
-                    }
-
-                    console.log("==============");
-                    console.log(response.status);
-                    console.log("==============");
-                    $scope.clientId = response.data.id;
-                    $scope.clientName = response.data.name;
-                    $scope.loadAllEmailByClientId();
-                    $scope.loadAllPhoneByClientId();
-                    $scope.sendClientId = "";
-
                 }).catch(err => {
-                console.log("==============3333333333");
+                $scope.clientId = "";
+                $scope.clientName = "";
+                $scope.sendClientId = "";
                 console.log(err);
-                console.log("==============333333");
             })
         }
     }
-*/
-
-    $scope.loadClient = function () {
-        if ($scope.sendClientId > 0) {
-            $http.get(contextPath + '/clients/' + $scope.sendClientId)
-                .then(function (response) {
-
-                    if (response.status !== 200) {
-                        console.log("======= status !== 200 =======");
-                        return;
-                    }
-
-                    console.log("==============");
-                    console.log(response.status);
-                    console.log("==============");
-                    $scope.clientId = response.data.id;
-                    $scope.clientName = response.data.name;
-                    $scope.loadAllEmailByClientId();
-                    $scope.loadAllPhoneByClientId();
-                    $scope.sendClientId = "";
-
-                }).catch(err => {
-                console.log("==============3333333333");
-                console.log(err);
-                console.log("==============333333");
-            })
-        }
-    }
-
-
-
-
-
-
-
-
-
 
 
     $scope.loadAllEmailByClientId = function () {
