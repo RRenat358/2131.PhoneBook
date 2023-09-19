@@ -6,6 +6,46 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
     $scope.clientName = "";
     $scope.sendClientId = "";
 
+
+
+/*
+    $scope.loadClient = function () {
+        if ($scope.sendClientId > 0) {
+            $http.get(contextPath + '/clients/' + $scope.sendClientId)
+                .then(function (response) {
+                    $scope.clientId = response.data.id;
+                    $scope.clientName = response.data.name;
+
+                    $scope.loadAllEmailByClientId();
+                    $scope.loadAllPhoneByClientId();
+                    $scope.sendClientId = "";
+                });
+        }
+    }
+*/
+
+    $scope.loadClient = function () {
+        if ($scope.sendClientId > 0) {
+            $http.get(contextPath + '/clients/' + $scope.sendClientId)
+                .then(function (response) {
+                    console.log("==============");
+                    console.log(response.status);
+                    console.log("==============");
+
+                    $scope.clientId = response.data.id;
+                    $scope.clientName = response.data.name;
+                    $scope.loadAllEmailByClientId();
+                    $scope.loadAllPhoneByClientId();
+                    $scope.sendClientId = "";
+
+
+                });
+        }
+    }
+
+
+
+/*
     $scope.loadClient = function () {
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
@@ -13,6 +53,7 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
             if (response.statusCode > 299) {
                 console.log("==============");
                 console.log(">299");
+                console.log(response.statusCode);
                 console.log("==============");
             }
             if (response.statusCode < 300) {
@@ -49,11 +90,14 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
                     $scope.sendClientId = "";
                 });
 */
-                });
+    /*
+                }).on('error', function(e) {
+                console.error(e);
+            });
 
         }
     }
-
+*/
 
     $scope.loadAllEmailByClientId = function () {
         $http.get(contextPath + '/clients/' + $scope.clientId + '/email')
