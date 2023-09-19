@@ -24,80 +24,71 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
     }
 */
 
+/*
     $scope.loadClient = function () {
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
                 .then(function (response) {
+
+                    if (response.status !== 200) {
+                        console.log("======= status !== 200 =======");
+                        return;
+                    }
+
                     console.log("==============");
                     console.log(response.status);
                     console.log("==============");
-
                     $scope.clientId = response.data.id;
                     $scope.clientName = response.data.name;
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
                     $scope.sendClientId = "";
 
-
-                });
+                }).catch(err => {
+                console.log("==============3333333333");
+                console.log(err);
+                console.log("==============333333");
+            })
         }
     }
+*/
 
-
-
-/*
     $scope.loadClient = function () {
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
                 .then(function (response) {
-            if (response.statusCode > 299) {
-                console.log("==============");
-                console.log(">299");
-                console.log(response.statusCode);
-                console.log("==============");
-            }
-            if (response.statusCode < 300) {
-                $scope.clientId = response.data.id;
-                $scope.clientName = response.data.name;
-                console.log("==============");
-                console.log("[" + $scope.clientId + "]");
-                console.log("[" + $scope.clientName + "]");
-                // console.log($scope.response.data);
-                // console.log($scope.response.data.name);
-                // console.log($scope.response.data.id);
-                console.log("==============");
 
-                $scope.loadAllEmailByClientId();
-                $scope.loadAllPhoneByClientId();
-                $scope.sendClientId = "";
-            }
+                    if (response.status !== 200) {
+                        console.log("======= status !== 200 =======");
+                        return;
+                    }
 
-
-/*
-        .then(function (response) {
+                    console.log("==============");
+                    console.log(response.status);
+                    console.log("==============");
                     $scope.clientId = response.data.id;
                     $scope.clientName = response.data.name;
-                    console.log("==============");
-                    console.log("[" + $scope.clientId + "]");
-                    console.log("[" + $scope.clientName + "]");
-                    // console.log($scope.response.data);
-                    // console.log($scope.response.data.name);
-                    // console.log($scope.response.data.id);
-                    console.log("==============");
-
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
                     $scope.sendClientId = "";
-                });
-*/
-    /*
-                }).on('error', function(e) {
-                console.error(e);
-            });
 
+                }).catch(err => {
+                console.log("==============3333333333");
+                console.log(err);
+                console.log("==============333333");
+            })
         }
     }
-*/
+
+
+
+
+
+
+
+
+
+
 
     $scope.loadAllEmailByClientId = function () {
         $http.get(contextPath + '/clients/' + $scope.clientId + '/email')
