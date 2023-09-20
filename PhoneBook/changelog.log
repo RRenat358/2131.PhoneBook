@@ -38,8 +38,13 @@
 20230913 = i = Front - edite styles
 20230913 = i = release-0.1.2
 ==============================
-
-
+20230915 = i = Front - add deleteClientById()
+20230915 = i = Front - add deleteEmailByIdByClientId()
+20230915 = i = Front - add deletePhoneByIdByClientId()
+20230915 = i = Front - bugfix create newClient for clientName=""
+20230920 = i = Front - add delete Email/Phone for page modify-contacts.html
+20230920 = i = release-1.0.0
+==============================
 
 
 

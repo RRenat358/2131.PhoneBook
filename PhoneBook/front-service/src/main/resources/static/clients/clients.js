@@ -1,8 +1,14 @@
 angular.module('phonebook-front').controller('clientsController', function ($scope, $http, $location) {
     const contextPath = 'http://localhost:5555/core/api/v1';
 
-    $scope.clientId = "";
-    $scope.clientName = "";
+
+    $scope.clearDataClient = function () {
+        $scope.clientId = "";
+        $scope.clientName = "";
+        $scope.AllEmailByClientId = "";
+        $scope.AllPhoneByClientId = "";
+    }
+    $scope.clearDataClient();
 
 
 
@@ -33,6 +39,30 @@ angular.module('phonebook-front').controller('clientsController', function ($sco
         $http.get(contextPath + '/clients/' + $scope.clientId + '/phone')
             .then(function (response) {
                 $scope.AllPhoneByClientId = response.data;
+            });
+    }
+
+    $scope.deleteClientById = function (clientIdForDel) {
+        $http.delete(contextPath + '/clients/' + clientIdForDel)
+            .then(function (response) {
+                if ($scope.clientId === clientIdForDel) {
+                    $scope.clearDataClient();
+                }
+                $scope.loadClients();
+            });
+    }
+
+    $scope.deleteEmailByIdByClientId = function (emailIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/email/' + emailIdForDel)
+            .then(function (response) {
+                $scope.loadAllEmailByClientId();
+            });
+    }
+
+    $scope.deletePhoneByIdByClientId = function (phoneIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/phone/' + phoneIdForDel)
+            .then(function (response) {
+                $scope.loadAllPhoneByClientId();
             });
     }
 

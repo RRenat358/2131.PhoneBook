@@ -25,10 +25,17 @@ public class EmailService {
     }
 
 
+
+    @Transactional
+    public void deleteEmailByIdByClientId(Long clientId, Long emailId) {
+        emailRepository.deleteEmailByIdByClientId(clientId, emailId);
+    }
+
     @Transactional
     public void deleteAllEmailByClientId(Long id) {
         emailRepository.deleteAllEmailByClientId(id);
     }
+
 
 
 }
