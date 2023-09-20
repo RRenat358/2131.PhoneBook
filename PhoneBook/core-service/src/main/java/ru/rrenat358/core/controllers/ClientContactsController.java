@@ -67,6 +67,24 @@ public class ClientContactsController {
     }
 
 
+
+
+
+
+    @DeleteMapping("/{clientId}/email/{emailId}")
+    @Operation(summary = "Удаление Email по ID, для Клиента по его ClientID")
+    public void deleteEmailByIdByClientId(@PathVariable @Parameter(description = "id клиента") Long clientId,
+                                    @PathVariable @Parameter(description = "Email клиента") Long emailId) {
+        emailService.deleteEmailByIdByClientId(clientId, emailId);
+    }
+
+    @DeleteMapping("/{clientId}/phone/{phoneId}")
+    @Operation(summary = "Удаление Phone по ID, для Клиента по его ClientID")
+    public void deletePhoneByIdByClientId(@PathVariable @Parameter(description = "id клиента") Long clientId,
+                                    @PathVariable @Parameter(description = "Phone клиента") Long phoneId) {
+        phoneService.deletePhoneByIdByClientId(clientId, phoneId);
+    }
+
     @DeleteMapping("/{id}/email")
     @Operation(summary = "Удаление ВСЕХ Email, для Клиента по его ClientID")
     public void deleteAllEmailByClientId(@PathVariable @Parameter(description = "id клиента") Long id) {

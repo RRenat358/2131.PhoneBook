@@ -6,6 +6,7 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
     $scope.clientName = "";
     $scope.sendClientId = "";
 
+
     $scope.loadClient = function () {
         if ($scope.sendClientId > 0) {
             $http.get(contextPath + '/clients/' + $scope.sendClientId)
@@ -14,7 +15,13 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
                     $scope.clientName = response.data.name;
                     $scope.loadAllEmailByClientId();
                     $scope.loadAllPhoneByClientId();
-                });
+                    $scope.sendClientId = "";
+                }).catch(err => {
+                $scope.clientId = "";
+                $scope.clientName = "";
+                $scope.sendClientId = "";
+                console.log(err);
+            })
         }
     }
 
@@ -59,6 +66,21 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
             .then(function (response) {
                 $scope.loadAllPhoneByClientId();
                 $scope.number = "";
+            });
+    }
+
+    //============================================================
+    $scope.deleteEmailByIdByClientId = function (emailIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/email/' + emailIdForDel)
+            .then(function (response) {
+                $scope.loadAllEmailByClientId();
+            });
+    }
+
+    $scope.deletePhoneByIdByClientId = function (phoneIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/phone/' + phoneIdForDel)
+            .then(function (response) {
+                $scope.loadAllPhoneByClientId();
             });
     }
 
