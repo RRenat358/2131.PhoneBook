@@ -42,6 +42,7 @@
 20230915 = i = Front - add deleteEmailByIdByClientId()
 20230915 = i = Front - add deletePhoneByIdByClientId()
 20230915 = i = Front - bugfix create newClient for clientName=""
+20230920 = i = Front - add delete Email/Phone for page modify-contacts.html
 
 
 

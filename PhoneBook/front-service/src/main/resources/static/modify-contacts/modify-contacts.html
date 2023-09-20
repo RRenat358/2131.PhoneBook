@@ -11,10 +11,6 @@
         <br>
         <input class="form-control" type="number" id="enterId" placeholder="ID клиента" ng-model="sendClientId">
         <br>
-        <!--        <input class="form-control" type="text" id="addEmail" placeholder="email" ng-model="newClient.address">-->
-        <!--        <br>-->
-        <!--        <input class="form-control" type="number" id="addPhone" placeholder="телефон" ng-model="newClient.number">-->
-        <!--        <br>-->
         <button type="submit" class="btn btn-outline-success">найти</button>
     </form>
     </div>
@@ -41,7 +37,7 @@
     </div>
     <!--============================================================-->
     <br>
-    <div class="container text-center">
+    <div class="container">
         <div class="row g-2">
             <div class="col-6">
                 <div class="p-3">
@@ -77,11 +73,15 @@
                         <thead>
                         <tr class="table-light">
                             <th scope="col">Email</th>
+                            <th> </th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat="clientEmail in AllEmailByClientId">
                             <td>{{clientEmail.address}}</td>
+                            <td>
+                                <button class="btn btn-outline-danger" ng-click="deleteEmailByIdByClientId(clientEmail.id)">X</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -93,11 +93,15 @@
                         <thead>
                         <tr class="table-light">
                             <th scope="col">Phone</th>
+                            <th> </th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat="clientPhone in AllPhoneByClientId">
                             <td>{{clientPhone.number}}</td>
+                            <td>
+                                <button class="btn btn-outline-danger" ng-click="deletePhoneByIdByClientId(clientPhone.id)">X</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

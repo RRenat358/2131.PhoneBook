@@ -69,6 +69,21 @@ angular.module('phonebook-front').controller('modifyContactsController', functio
             });
     }
 
+    //============================================================
+    $scope.deleteEmailByIdByClientId = function (emailIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/email/' + emailIdForDel)
+            .then(function (response) {
+                $scope.loadAllEmailByClientId();
+            });
+    }
+
+    $scope.deletePhoneByIdByClientId = function (phoneIdForDel) {
+        $http.delete(contextPath + '/clients/'  + $scope.clientId + '/phone/' + phoneIdForDel)
+            .then(function (response) {
+                $scope.loadAllPhoneByClientId();
+            });
+    }
+
 
 
 });
